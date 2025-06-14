@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <!--FAVICON-->
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+
+    <!--REMIXICONS-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.1.0/remixicon.min.css"
+      crossorigin=""
+    />
+
+    <title>Aashish Mallick - Fullstack Engineer</title>
+  </head>
+
+  <body>
+    <!-- Only one <body> tag is needed -->
+    <!--HEADER -->
+    <header class="header" id="header">
+      <nav class="nav container">
+        <a href="#" class="nav__logo">
+          <span class="nav__logo-circle">A</span>
+          <span class="nav__logo-name">Aashish Mallick.</span>
+        </a>
+
+        <div class="nav__menu" id="nav-menu">
+          <span class="nav__title"> Menu </span>
+
+          <h3 class="nav__name">Aashish</h3>
+
+          <ul class="nav__list">
+            <li class="nav__item">
+              <a href="#home" class="nav__link active-link">Home</a>
+            </li>
+            <li class="nav__item">
+              <a href="#skills" class="nav__link">My skills</a>
+            </li>
+            <li class="nav__item">
+              <a href="#experience" class="nav__link">Work experience</a>
+            </li>
+            <li class="nav__item">
+              <a href="#projects" class="nav__link">Program/Projects</a>
+            </li>
+            <li class="nav__item">
+              <a href="#contact" class="nav__link nav__link-button"
+                >Contact Me</a
+              >
+            </li>
+          </ul>
+          <!--Close button-->
+          <div class="nav__close" id="nav-close">
+            <i class="ri-close-line"></i>
+          </div>
+        </div>
+
+        <div class="nav__buttons">
+          <!-- Theme button -->
+          <i class="ri-moon-line change-theme" id="theme-button"></i>
+
+          <!--Toggle button-->
+          <div class="nav__toggle" id="nav-toggle">
+            <i class="ri-menu-5-line"></i>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- MAIN -->
+    <main class="main">
+      <!-- HOME -->
+      <section class="home section" id="home">
+        <div class="home__container container grid">
+          <h1 class="home__name">Aashish Mallick</h1>
+
+          <div class="home__perfil">
+            <div class="home__image">
+              <img src="img/easlo-laptop.svg" alt="image" class="home__img" />
+              <div class="home__shadow"></div>
+
+              <img src="img/curved-arrow.svg" alt="" class="home__arrow" />
+              <img src="img/random-lines.svg" alt="" class="home__line" />
+
+              <div class="geometric-box"></div>
+            </div>
+
+            <div class="home__social">
+              <a
+                href="https://www.linkedin.com/in/aashish360/"
+                target="_blank"
+                class="home__social-link"
+              >
+                <i class="ri-linkedin-box-line"></i>
+              </a>
+
+              <a
+                href="https://github.com/mallick360/"
+                target="_blank"
+                class="home__social-link"
+              >
+                <i class="ri-github-line"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="home__info">
+            <p class="home__description">
+              <b>Fullstack Engineer</b>, with over 6 years of experience building scalable, high-availability platforms across ReactJS, Django, GoLang, and AWS. Proven track record in leading backend-heavy projects, designing cloud-native infrastructure, and delivering high-performance frontend applications using React and Next.js. Currently leading engineering efforts at OML, where I architect data-driven solutions for influencer marketing, enforce data privacy (GDPR), and deploy robust microservices using Docker and ECS. Strong focus on clean architecture, system design, and team leadership. Actively seeking SDE-III opportunities to drive impact in fast-moving product teams.
+              <a href="files/aashish_mallick_resume_sde3.pdf" class="button download__resume">
+                <i class="ri-download-line"></i>Download Resume
+              </a>
+            </p>
+
+            <!-- <a href="#about" class="home__scroll">
+              <div class="home__scroll-box">
+                <i class="ri-arrow-down-s-line"></i>
+              </div>
+
+              <span class="home__scroll-text">Scroll Down</span>
+            </a> -->
+          </div>
+        </div>
+      </section>
+
+      <!-- ABOUT -->
+      <section class="about section" id="skills">
+        <div class="about__container container grid">
+          <h2 class="section__title-1">
+            <span>My skills.</span>
+          </h2>
+          <div class="about__info">
+             <div class="my_skill__container">
+                <h4 class="my_skills__heading">Languages</h4>
+                <div class="my_skills__skill_wrapper">
+                     <div class="my_skills__item">
+                        <div class="my_skills__item__img"><img src="img/icons/python.png" /></div>
+                        <span>Python</span>
+                    </div>
+                    <div class="my_skills__item">
+                        <div class="my_skills__item__img"><img src="img/icons/javascript.png" /></div>
+                        <span>Javascript</span>
+                    </div>
+                    <div class="my_skills__item">
+                        <div class="my_skills__item__img"><img src="img/icons/typescript.png" /></div>
+                        <span>Typescript</span>
+                    </div>
+                    <div class="my_skills__item">
+                        <div class="my_skills__item__img"><img src="img/icons/golang.png" /></div>
+                        <span>GoLang</span>
+                    </div>
+                    <div class="my_skills__item">
+                        <div class="my_skills__item__img"><img src="img/icons/sql.png" /></div>
+                        <span>SQL</span>
+                    </div>
+                    <div class="my_skills__item">
+                        <div class="my_skills__item__img"><img src="img/icons/nosql.png" /></div>
+                        <span>NoSQL</span>
+                    </div>
+                    <div class="my_skills__item">
+                        <div class="my_skills__item__img"><img src="img/icons/html5.png" /></div>
+                        <span>HTML5</span>
+                    </div>
+                    <div class="my_skills__item">
+                        <div class="my_skills__item__img"><img src="img/icons/css3.png" /></div>
+                        <span>CSS3</span>
+                    </div>
+                </div>
+            </div>
+            <div class="my_skill__container">
+                <h4 class="my_skills__heading">Frameworks</h4>
+                <div class="my_skills__skill_wrapper">
+                     <div class="my_skills__item">
+                        <div class="my_skills__item__img"><img src="img/icons/django.png" /></div>
+                        <span>Django</span>
+                    </div>
+                     <div class="my_skills__item">
+                        <div class="my_skills__item__img"><img src="img/icons/reactjs.png" /></div>
+                        <span>ReactJS</span>
+                    </div>
+                     <div class="my_skills__item">
+                        <div class="my_skills__item__img"><img src="img/icons/nextjs.png" /></div>
+                        <span>NextJS</span>
+                    </div>
+                    <div class="my_skills__item">
+                        <div class="my_skills__item__img"><img src="img/icons/redux.png" /></div>
+                        <span>Redux</span>
+                    </div>
+                    <div class="my_skills__item">
+                        <div class="my_skills__item__img"><img src="img/icons/nodejs.png" /></div>
+                        <span>Node.js</span>
+                    </div>
+                    <div class="my_skills__item">
+                        <div class="my_skills__item__img"><img src="img/icons/kibana.png" /></div>
+                        <span>Kibana</span>
+                    </div>
+                    <div class="my_skills__item">
+                        <div class="my_skills__item__img"><img src="img/icons/mui.png" /></div>
+                        <span>Material UI</span>
+                    </div>
+                    <div class="my_skills__item">
+                        <div class="my_skills__item__img"><img src="img/icons/storybook.png" /></div>
+                        <span>Storybook</span>
+                    </div>
+                </div>
+            </div>
+            <div class="my_skill__container">
+                <h4 class="my_skills__heading">Databases</h4>
+                <div class="my_skills__skill_wrapper">
+                     <div class="my_skills__item">
+                        <div class="my_skills__item__img"><img src="img/icons/postgresql.png" /></div>
+                        <span>PostgreSQL</span>
+                    </div>
+                     <div class="my_skills__item">
+                        <div class="my_skills__item__img"><img src="img/icons/mongodb.png" /></div>
+                        <span>MongoDB</span>
+                    </div>
+                     <div class="my_skills__item">
+                        <div class="my_skills__item__img"><img src="img/icons/mysql.png" /></div>
+                        <span>MySQL</span>
+                    </div>
+                    <div class="my_skills__item">
+                        <div class="my_skills__item__img"><img src="img/icons/firebase.png" /></div>
+                        <span>Firebase</span>
+                    </div>
+                </div>
+            </div>
+            <div class="my_skill__container">
+                <h4 class="my_skills__heading">Cloud & DevOps</h4>
+                <div class="my_skills__skill_wrapper">
+                     <div class="my_skills__item">
+                        <div class="my_skills__item__img"><img src="img/icons/docker.png" /></div>
+                        <span>Docker</span>
+                    </div>
+                     <div class="my_skills__item">
+                        <div class="my_skills__item__img"><img src="img/icons/aws_vpc.svg" /></div>
+                        <span>AWS VPC</span>
+                    </div>
+                     <div class="my_skills__item">
+                        <div class="my_skills__item__img"><img src="img/icons/aws_loadbalancer.svg" /></div>
+                        <span>AWS Load Balancer</span>
+                    </div>
+                    <div class="my_skills__item">
+                        <div class="my_skills__item__img"><img src="img/icons/aws_lambda.svg" /></div>
+                        <span>AWS Lambda</span>
+                    </div>
+                    <div class="my_skills__item">
+                        <div class="my_skills__item__img"><img src="img/icons/aws_sqs.svg" /></div>
+                        <span>AWS SQS</span>
+                    </div>
+                    <div class="my_skills__item">
+                        <div class="my_skills__item__img"><img src="img/icons/aws_cloudformation.svg" /></div>
+                        <span>AWS Cloudformation</span>
+                    </div>
+                    <div class="my_skills__item">
+                        <div class="my_skills__item__img"><img src="img/icons/aws_ec2.svg" /></div>
+                        <span>AWS EC2</span>
+                    </div>
+                    <div class="my_skills__item">
+                        <div class="my_skills__item__img"><img src="img/icons/aws_ecs.svg" /></div>
+                        <span>AWS ECS</span>
+                    </div>
+                    <div class="my_skills__item">
+                        <div class="my_skills__item__img"><img src="img/icons/aws_rds.svg" /></div>
+                        <span>AWS RDS</span>
+                    </div>
+                    <div class="my_skills__item">
+                        <div class="my_skills__item__img"><img src="img/icons/aws_cloudwatch.svg" /></div>
+                        <span>AWS Cloudwatch</span>
+                    </div>
+                    <div class="my_skills__item">
+                        <div class="my_skills__item__img"><img src="img/icons/aws_apigateway.svg" /></div>
+                        <span>AWS API Gateway</span>
+                    </div>
+                    <div class="my_skills__item">
+                        <div class="my_skills__item__img"><img src="img/icons/aws_amplify.svg" /></div>
+                        <span>AWS Amplify</span>
+                    </div>
+                </div>
+            </div>
+            <div class="my_skill__container">
+                <h4 class="my_skills__heading">Tools</h4>
+                <div class="my_skills__skill_wrapper">
+                     <div class="my_skills__item">
+                        <div class="my_skills__item__img"><img src="img/icons/git.png" /></div>
+                        <span>Git</span>
+                    </div>
+                     <div class="my_skills__item">
+                        <div class="my_skills__item__img"><img src="img/icons/github.png" /></div>
+                        <span>Github</span>
+                    </div>
+                     <div class="my_skills__item">
+                        <div class="my_skills__item__img"><img src="img/icons/postman.png" /></div>
+                        <span>Postman</span>
+                    </div>
+                    <div class="my_skills__item">
+                        <div class="my_skills__item__img"><img src="img/icons/figma.png" /></div>
+                        <span>Figma</span>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="about__buttons">
+              <a href="#contact" class="button">
+                <i class="ri-send-plane-line"></i>Contact Me
+              </a>
+
+              <a
+                href="https://www.linkedin.com/in/"
+                target="_blank"
+                class="button__ghost"
+              >
+                <i class="ri-linkedin-box-line"></i>
+              </a>
+            </div> -->
+          </div>
+        </div>
+      </section>
+
+      <!-- SERVICES -->
+      <section class="services section" id="experience">
+        <h2 class="section__title-2">
+          <span>Work experience.</span>
+        </h2>
+
+        <div class="services__container container grid">
+          <article class="services__card">
+            <div class="services__border"></div>
+
+            <div class="services__content">
+              <div class="services__icon">
+                <div class="services__box"></div>
+                <i class="ri-layout-4-line"></i>
+              </div>
+              <div class="work_experience__item__header">
+                <h2 class="services__title">Only Much Louder | SDE-III | Bangalore</h2>
+                <h4>April 2024 - Present</h4>
+              </div>
+              
+
+              <div class="services__description">
+                <ul>
+                  <li>Developed and optimized <b>creator analytics microservice</b> to process social media data, implementing algorithms for <b>audience insights, content performance</b>, and creator behaviour analysis to support data-driven influencer marketing using Django, GoLang, PostgreSQL and React. (Visit https://hyp.io/).</li>
+                  <li>Developed the <b>Agency Contract Management and Plans</b> feature, including <b>contract creation, plans and transaction history APIs, client- and sales-facing UIs</b>, and a <b>credits-based system</b> to streamline operations and improve efficiency for both clients and sales teams.</li>
+                  <li>Led <b>GDPR compliance initiatives</b> by implementing robust <b>data privacy, encryption, and access control</b> measures across the <b>AWS infrastructure</b> and the <b>Hypothesis platform</b>, ensuring secure and compliant data handling practices.</li>
+                  <li>Implemented <b>Attribute-Based Access Control (ABAC)</b> to manage <b>granular view and edit permissions</b> based on <b>user roles and contextual attributes</b>, enhancing platform <b>security and flexibility</b>.</li>
+                  <li>Integrated <b>Meta Graph API</b> with secure <b>OAuth-based authentication</b> to fetch <b>real-time insights</b> on creators and their posts, enabling data-driven decision-making and performance tracking.</li>
+                  <li>Developed the Listicles feature to showcase <b>AI-curated influencer lists</b> based on <b>categories and locations</b>, enhancing <b>content discovery and user engagement</b> on the platform.</li>
+                  <li><b>Architected and deployed scalable</b>, production-grade cloud applications using a broad range of <b>AWS services</b>, ensuring <b>high availability, security, and performance</b>.</li>
+                  <li><b>Led and mentored the engineering team</b>, promoting <b>best coding practices</b>, fostering technical growth, and ensuring <b>on-time, high-quality project delivery</b>.</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
+          <article class="services__card">
+            <div class="services__border"></div>
+
+            <div class="services__content">
+              <div class="services__icon">
+                <div class="services__box"></div>
+                <i class="ri-layout-4-line"></i>
+              </div>
+              <div class="work_experience__item__header">
+                <h2 class="services__title">Only Much Louder | SDE-II | Bangalore</h2>
+                <h4>March 2023 - March 2024</h4>
+              </div>
+              <div class="services__description">
+                <ul>
+                  <li>Engineered a <b>responsive and interactive frontend</b> for the <b>Hypothesis platform’s Campaign Analytics and Creator Discovery modules</b> using ReactJS and Material-UI (MUI).</li>
+                  <li>Built and deployed a <b>dynamic, SEO-optimized web application</b> using <b>Next.js</b>, integrating <b>Strapi CMS</b> with <b>custom plugins</b> for scalable and flexible content management.</li>
+                  <li>Designed and maintained a <b>reusable design system</b> using Material-UI (MUI) to ensure a <b>consistent, scalable, and maintainable UI/UX</b> across the platform.</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
+          <article class="services__card">
+            <div class="services__border"></div>
+
+            <div class="services__content">
+              <div class="services__icon">
+                <div class="services__box"></div>
+                <i class="ri-layout-4-line"></i>
+              </div>
+              <div class="work_experience__item__header">
+                <h2 class="services__title">Byju's - The Learning App | SDE-II | Bangalore</h2>
+                <h4>March 2022 - March 2023</h4>
+              </div>
+              <div class="services__description">
+                <ul>
+                  <li>Developed an <b>automated PDF report generation system</b> for <b>student performance analytics</b> using <b>Handlebars.js</b> for templating and <b>Puppeteer</b> for rendering.</li>
+                  <li>Developed a <b>video feedback collection interface</b> that enables users to <b>leave timestamped feedback</b> on specific moments within a video.</li>
+                  <li>Developed the <b>frontend interface</b> for <b>tutor task management and scheduling</b>, enabling efficient assignment tracking and calendar-based planning.</li>
+                  <li>Developed <b>CMS features</b> including <b>batch management, subjective test scheduling</b>, and <b>monthly assessment planning</b> to streamline academic workflows.</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+         
+          
+          <article class="services__card">
+            <div class="services__border"></div>
+
+            <div class="services__content">
+              <div class="services__icon">
+                <div class="services__box"></div>
+                <i class="ri-layout-4-line"></i>
+              </div>
+              <div class="work_experience__item__header">
+                <h2 class="services__title">10times Internet Pvt. Ltd. | SDE-I | Noida</h2>
+                <h4>Jan 2019 - March 2022</h4>
+              </div>
+              <div class="services__description">
+                <ul>
+                  <li>Developed a <b>real-time communication platform</b> featuring <b>video conferencing</b> and <b>instant messaging</b>, enabling seamless virtual collaboration.</li>
+                  <li>Handled a SAAS project which has features like <b>CRM</b>, Third-party integration for CRM, <b>CMS, Lead generation</b> (based on user interest and location), <b>Analytics</b>. (Visit: https://login.10times.com).</li>
+                  <li>Independently developed a <b>server-side Email Templating Engine</b> supporting <b>modular, reusable content blocks</b> for dynamic and maintainable email generation.</li>
+                  <li>Integrated and managed <b>Stripe payment gateway</b> for <b>oDASH</b>, enabling secure and seamless online transactions.</li> 
+                  <li>Developed a <b>real-time chat system</b> for <b>10times.com</b> using <b>Firebase</b>, enabling instant messaging and seamless user communication across the platform. </li>
+                </ul>
+              </div>
+            </div>
+          </article>
+         
+        </div>
+      </section>
+
+      <!-- PROJECTS -->
+      <section class="projects section" id="projects">
+        <h2 class="section__title-1">
+          <span>Projects.</span>
+        </h2>
+
+        <div class="projects__container container grid">
+          <article class="projects__card">
+            <div class="projects__image">
+              <img src="img/project-1.webp" alt="image" class="projects__img" />
+
+              <!-- <a href="#" class="projects__button button">
+                <i class="ri-arrow-right-up-line"></i>
+              </a> -->
+            </div>
+
+            <div class="projects__content">
+              <h3 class="projects__subtitle">Project</h3>
+              <h2 class="projects__title">School of Innovation India from Facebook at SV.CO</h2>
+
+              <p class="projects__description">
+                Developed an immersive <b>VR experience</b> using <b>Unity</b> and <b>Meta Quest</b>, enabling users to explore a virtual city and <b>interact with 3D objects</b> in real time.
+              </p>
+            </div>
+
+            <!-- <div class="projects__buttons">
+              <a
+                href="https://github.com/ArindamTripathi619/ai_calculator"
+                target="_blank"
+                class="projects__link"
+              >
+                <i class="ri-github-line"></i> View
+              </a>
+
+              <a
+                href="https://aicalculator-9crg.onrender.com/"
+                target="_blank"
+                class="projects__link"
+              >
+                <i class="ri-global-line"></i> View
+              </a>
+            </div> -->
+          </article>
+
+          <article class="projects__card">
+            <div class="projects__image">
+              <img src="img/project-2.webp" alt="image" class="projects__img" />
+
+              <!-- <a href="#" class="projects__button button">
+                <i class="ri-arrow-right-up-line"></i>
+              </a> -->
+            </div>
+
+            <div class="projects__content">
+              <h3 class="projects__subtitle">WebApp</h3>
+              <h2 class="projects__title">Document Tracker</h2>
+
+              <p class="projects__description">
+                Built a <b>standalone JavaScript library</b> that enables users to <b>track and manage documents</b>, designed for seamless integration across web applications.<br><br>
+                <b>Stack Used:</b> HTML5/CSS, Bootstrap 4, PHP, JavaScript (scripting language), MySQL, Socket.io
+              </p>
+            </div>
+
+            <!-- <div class="projects__buttons">
+              <a
+                href="https://github.com/ArindamTripathi619/spotify-voice-assistant/"
+                target="_blank"
+                class="projects__link"
+              >
+                <i class="ri-github-line"></i> View
+              </a>
+
+              <a
+                href="https://youtu.be/V0salcEoKXA?si=iHNM9TokDCPgqFdP"
+                target="_blank"
+                class="projects__link"
+              >
+                <i class="ri-global-line"></i> View
+              </a>
+            </div> -->
+          </article>
+
+          <article class="projects__card">
+            <div class="projects__image">
+              <img src="img/project-3.webp" alt="image" class="projects__img" />
+
+              <a href="https://github.com/aashish360/EAS/" target="_blank" class="projects__button button">
+                <i class="ri-arrow-right-up-line"></i>
+              </a>
+            </div>
+
+            <div class="projects__content">
+              <h3 class="projects__subtitle">Windows Game</h3>
+              <h2 class="projects__title">Echoes and Shadows</h2>
+
+              <p class="projects__description">
+                Designed and developed a <b>standalone RPG game</b> where players assume the role of an ancient island warrior, battling monsters to avenge the destruction of her village.<br><br>
+                <b>Stack Used:</b> Unity3D, Adobe Photoshop 
+              </p>
+            </div>
+
+            <div class="projects__buttons">
+              <a
+                href="https://github.com/aashish360/EAS/"
+                target="_blank"
+                class="projects__link"
+              >
+                <i class="ri-github-line"></i> View
+              </a>
+
+              <!-- <a
+                href="https://krishnachatbot.devcrewx.tech/"
+                target="_blank"
+                class="projects__link"
+              >
+                <i class="ri-global-line"></i> View
+              </a> -->
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section class="contact section" id="contact">
+        <div class="contact__container grid">
+          <div class="contact__data">
+            <h2 class="section__title-2">
+              <span>Contact Me.</span>
+            </h2>
+
+            <p class="contact__description-1">
+              I will read all emails. Send me any message you want and I'll get
+              back to you.
+            </p>
+
+            <p class="contact__description-2">
+              I need your <b>Name</b> and <b>Email Address</b>, but you won't
+              receive anything other than your reply.
+            </p>
+
+            <div class="geometric-box"></div>
+          </div>
+
+          <div class="contact__mail">
+            <h2 class="contact__title">Send Me A Message</h2>
+
+            <form action="" class="contact__form" id="contact-form">
+              <div class="contact__group">
+                <div class="contact__box">
+                  <input
+                    type="text"
+                    name="user_name"
+                    class="contact__input"
+                    id="name"
+                    required
+                    placeholder="First Name"
+                  />
+                  <label for="name" class="contact__label">First Name</label>
+                </div>
+
+                <div class="contact__box">
+                  <input
+                    type="email"
+                    name="user_email"
+                    class="contact__input"
+                    id="email"
+                    required
+                    placeholder="Email Address"
+                  />
+                  <label for="email" class="contact__label"
+                    >Email Address</label
+                  >
+                </div>
+              </div>
+
+              <div class="contact__box">
+                <input
+                  type="text"
+                  name="user_subject"
+                  class="contact__input"
+                  id="subject"
+                  required
+                  placeholder="Subject"
+                />
+                <label for="subject" class="contact__label">Subject</label>
+              </div>
+
+              <div class="contact__box contact__area">
+                <textarea
+                  name="user_message"
+                  id="message"
+                  class="contact__input"
+                  required
+                  placeholder="Message"
+                ></textarea>
+                <label for="message" class="contact__label">Message</label>
+              </div>
+
+              <p class="contact__message" id="contact-message"></p>
+
+              <button type="submit" class="contact__button button">
+                <i class="ri-send-plane-line"></i>Send Message
+              </button>
+            </form>
+          </div>
+
+          <div class="contact__social">
+            <img
+              src="img/curved-arrow.svg"
+              alt=""
+              class="contact__social-arrow"
+            />
+
+            <div class="contact__social-data">
+              <div>
+                <p class="contact__social-description-1">
+                  send emails from here
+                </p>
+
+                <p class="contact__social-description-2">
+                  Write me on my social networks
+                </p>
+              </div>
+
+              <div class="contact__social-links">
+                <!-- <a
+                  href="https://www.facebook.com/"
+                  target="_blank"
+                  class="contact__social-link"
+                >
+                  <i class="ri-facebook-circle-line"></i>
+                </a>
+
+                <a
+                  href="https://www.instagram.com/"
+                  target="_blank"
+                  class="contact__social-link"
+                >
+                  <i class="ri-instagram-line"></i>
+                </a> -->
+
+                <a
+                  href="https://www.linkedin.com/in/aashish360/"
+                  target="_blank"
+                  class="contact__social-link"
+                >
+                  <i class="ri-linkedin-box-line"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="footer__container container grid">
+        <ul class="footer__links">
+          <li>
+            <a href="#home" class="footer__link">Home</a>
+          </li>
+
+          <li>
+            <a href="#skills" class="footer__link">My skills</a>
+          </li>
+
+          <li>
+            <a href="#experience" class="footer__link">Work experience</a>
+          </li>
+          
+          <li>
+            <a href="#projects" class="footer__link">Program/Projects</a>
+          </li>
+        </ul>
+
+        <span class="footer__copy">
+          &#169; All Rights Reserved By
+          <a href="#">DevCrewX.</a>
+        </span>
+      </div>
+    </footer>
+
+    <!-- SCROLL UP -->
+    <a href="" class="scrollup" id="scroll-up">
+      <i class="ri-arrow-up-s-line"></i>
+    </a>
+
+    <!-- SCROLLREVEAL -->
+    <script src="js/scrollreveal.min.js"></script>
+
+    <!-- EMAIL JS -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+    <!-- MAIN JS -->
+    <script src="js/main.js"></script>
+  </body>
+</html>
