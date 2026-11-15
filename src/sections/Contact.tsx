@@ -1,38 +1,16 @@
-import { useRef, useState } from 'react'
-import emailjs from '@emailjs/browser'
+import { useForm, ValidationError } from '@formspree/react'
 import { motion } from 'framer-motion'
-import { Send } from 'lucide-react'
+import { Mail, Send } from 'lucide-react'
 import { FaGithub as Github, FaLinkedin as Linkedin } from 'react-icons/fa6'
-import { emailjsConfig, socialLinks } from '@/constants/content'
+import { formspreeConfig, personal, socialLinks } from '@/constants/content'
 import { SectionHeading } from '@/components/SectionHeading'
 import { Button } from '@/components/Button'
 import { fadeUp } from '@/animations/variants'
 
 const iconMap = { github: Github, linkedin: Linkedin }
 
-type Status = 'idle' | 'sending' | 'sent' | 'error'
-
 export function Contact() {
-  const formRef = useRef<HTMLFormElement>(null)
-  const [status, setStatus] = useState<Status>('idle')
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    if (!formRef.current) return
-
-    setStatus('sending')
-    emailjs
-      .sendForm(emailjsConfig.serviceId, emailjsConfig.templateId, formRef.current, emailjsConfig.publicKey)
-      .then(() => {
-        setStatus('sent')
-        formRef.current?.reset()
-        setTimeout(() => setStatus('idle'), 5000)
-      })
-      .catch(() => {
-        setStatus('error')
-        setTimeout(() => setStatus('idle'), 5000)
-      })
-  }
+  const [state, handleSubmit, reset] = useForm(formspreeConfig.formId)
 
   return (
     <section id="contact" className="px-6 py-24">
@@ -57,6 +35,7 @@ export function Contact() {
                 Currently building AI platforms at enGen Global. For full-time engineering opportunities, connect with me on LinkedIn or send a message here.
               </p>
             </div>
+            <a href={`mailto:${personal.email}`} className="mt-6 inline-flex items-center gap-2 self-start text-sm text-accent hover:underline"><Mail size={16} />Email me directly</a>
             <div className="mt-8 flex flex-wrap gap-3">
               {socialLinks.map((link) => {
                 const Icon = iconMap[link.icon]
@@ -76,59 +55,91 @@ export function Contact() {
           </motion.div>
 
           <motion.form
-            ref={formRef}
+            action={`https://formspree.io/f/${formspreeConfig.formId}`}
+            method="POST"
             onSubmit={handleSubmit}
+            aria-busy={state.submitting}
             variants={fadeUp}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: '-10% 0px' }}
             className="work-panel space-y-4 rounded-xl p-6 sm:p-8"
           >
-            <div className="grid gap-4 sm:grid-cols-2">
-              <input
-                type="text"
-                name="user_name"
-                required
-                aria-label="Your name"
-                autoComplete="name"
-                placeholder="Your name"
-                className="min-w-0 w-full rounded-md border border-border bg-surface px-4 py-3 text-sm text-text placeholder:text-text-faint focus:border-accent focus:outline-none"
-              />
-              <input
-                type="email"
-                name="user_email"
-                required
-                aria-label="Email address"
-                autoComplete="email"
-                placeholder="Email address"
-                className="min-w-0 w-full rounded-md border border-border bg-surface px-4 py-3 text-sm text-text placeholder:text-text-faint focus:border-accent focus:outline-none"
-              />
-            </div>
-            <input
-              type="text"
-              name="user_subject"
-              required
-              aria-label="Role or subject"
-              placeholder="Role or subject"
-              className="w-full rounded-md border border-border bg-surface px-4 py-3 text-sm text-text placeholder:text-text-faint focus:border-accent focus:outline-none"
-            />
-            <textarea
-              name="user_message"
-              required
-              rows={4}
-              aria-label="Message"
-              placeholder="Tell me about the role and team"
-              className="w-full resize-none rounded-md border border-border bg-surface px-4 py-3 text-sm text-text placeholder:text-text-faint focus:border-accent focus:outline-none"
-            />
+            {state.succeeded ? (
+              <div role="status" className="flex min-h-80 flex-col items-start justify-center">
+                <h3 className="font-display text-2xl font-semibold">Thanks for reaching out.</h3>
+                <p className="mt-3 text-sm leading-7 text-text-muted">Your message was submitted successfully. I’ll get back to you at the email address you provided.</p>
+                <Button type="button" variant="ghost" onClick={reset} className="mt-6">Send another message</Button>
+              </div>
+            ) : (
+              <>
+                <div className="grid gap-4 sm:grid-cols-2">
+                  <div className="min-w-0">
+                    <input
+                      type="text"
+                      name="name"
+                      aria-describedby="contact-name-error"
+                      maxLength={120}
+                      required
+                      disabled={state.submitting}
+                      aria-label="Your name"
+                      autoComplete="name"
+                      placeholder="Your name"
+                      className="min-w-0 w-full rounded-md border border-border bg-surface px-4 py-3 text-sm text-text placeholder:text-text-faint focus:border-accent focus:outline-none"
+                    />
+                    <ValidationError id="contact-name-error" field="name" prefix="Name" errors={state.errors} className="mt-2 text-xs text-emphasis" />
+                  </div>
+                  <div className="min-w-0">
+                    <input
+                      type="email"
+                      name="email"
+                      aria-describedby="contact-email-error"
+                      maxLength={254}
+                      required
+                      disabled={state.submitting}
+                      aria-label="Email address"
+                      autoComplete="email"
+                      placeholder="Email address"
+                      className="min-w-0 w-full rounded-md border border-border bg-surface px-4 py-3 text-sm text-text placeholder:text-text-faint focus:border-accent focus:outline-none"
+                    />
+                    <ValidationError id="contact-email-error" field="email" prefix="Email" errors={state.errors} className="mt-2 text-xs text-emphasis" />
+                  </div>
+                </div>
+                <input
+                  type="text"
+                  name="subject"
+                  aria-describedby="contact-subject-error"
+                  maxLength={200}
+                  required
+                  disabled={state.submitting}
+                  aria-label="Role or subject"
+                  placeholder="Role or subject"
+                  className="w-full rounded-md border border-border bg-surface px-4 py-3 text-sm text-text placeholder:text-text-faint focus:border-accent focus:outline-none"
+                />
+                <ValidationError id="contact-subject-error" field="subject" prefix="Subject" errors={state.errors} className="text-xs text-emphasis" />
+                <textarea
+                  name="message"
+                  aria-describedby="contact-message-error"
+                  maxLength={5000}
+                  required
+                  disabled={state.submitting}
+                  rows={4}
+                  aria-label="Message"
+                  placeholder="Tell me about the role and team"
+                  className="w-full resize-none rounded-md border border-border bg-surface px-4 py-3 text-sm text-text placeholder:text-text-faint focus:border-accent focus:outline-none"
+                />
 
-            <motion.p variants={fadeUp} role="status" aria-live="polite" className="min-h-5 text-sm text-accent">
-              {status === 'sent' && 'Thanks—your message has been sent.'}
-              {status === 'error' && 'Unable to send. Please try again or reach out on LinkedIn.'}
-            </motion.p>
+                <ValidationError id="contact-message-error" field="message" prefix="Message" errors={state.errors} className="text-xs text-emphasis" />
+                <div role="alert" className="text-sm text-emphasis">
+                  <ValidationError errors={state.errors} />
+                  {state.errors && <p className="mt-2 text-xs leading-6 text-text-muted">Please check your details and try again. You can also <a href={`mailto:${personal.email}`} className="text-accent underline">email me directly</a>.</p>}
+                </div>
 
-            <Button type="submit" icon={<Send size={16} />} disabled={status === 'sending'}>
-              {status === 'sending' ? 'Sending…' : 'Send Message'}
-            </Button>
+                <Button type="submit" icon={<Send size={16} />} disabled={state.submitting}>
+                  {state.submitting ? 'Sending…' : 'Send Message'}
+                </Button>
+              </>
+            )}
           </motion.form>
         </div>
       </div>

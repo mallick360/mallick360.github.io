@@ -13,6 +13,7 @@ export const personal = {
   bio: "I’m Aashish, a full-stack engineer with 7+ years of experience turning complex requirements into production software. I work across interfaces, backend services, integrations, AI, and cloud infrastructure—with ownership from architecture through deployment.",
   availability: 'Seeking full-time Forward Deployed Engineer roles',
   resumeUrl: '/resume.pdf',
+  email: 'aashishmallick360@gmail.com',
 }
 
 export const socialLinks: SocialLink[] = [
@@ -272,8 +273,6 @@ export const architecturePillars: ArchitecturePillar[] = [
   },
 ]
 
-export const emailjsConfig = {
-  serviceId: 'service_g3lsmzq',
-  templateId: 'template_ygoyp4w',
-  publicKey: '5aXvd9HhtXdrv97IB',
+export const formspreeConfig = {
+  formId: 'xwlolbvg',
 }
