@@ -1,65 +1,27 @@
-import { motion } from 'framer-motion'
-import { Brain, Building2, Cloud, Users } from 'lucide-react'
-import { SectionHeading } from '@/components/SectionHeading'
-import { Card } from '@/components/Card'
-import { staggerContainer, fadeUp } from '@/animations/variants'
-
-const pillars = [
-  {
-    icon: Brain,
-    title: 'AI Engineering',
-    description:
-      'Architecting enterprise GenAI systems — RAG pipelines, AI Agents, LLM evaluation, and observability — for a regulated U.S. healthcare platform on Gemini and Vertex AI.',
-  },
-  {
-    icon: Building2,
-    title: 'Enterprise Development',
-    description:
-      'Seven years building production systems at scale: a creator-analytics platform serving 100+ customers and 280M+ profiles, and CMS/SaaS platforms used by thousands of daily users.',
-  },
-  {
-    icon: Cloud,
-    title: 'Cloud-Native Architecture',
-    description:
-      'Designing and operating cloud infrastructure across GCP and AWS — containers, managed databases, event streaming, and serverless — with 99.99% uptime in production.',
-  },
-  {
-    icon: Users,
-    title: 'Technical Leadership',
-    description:
-      'Led and mentored a 6-engineer team, lifting sprint velocity by 30% while enforcing GDPR compliance and clean-architecture standards across the codebase.',
-  },
-]
+import { ArrowUpRight } from 'lucide-react'
+import { personal, projects } from '@/constants/content'
 
 export function About() {
   return (
-    <section id="about" className="px-6 py-24">
-      <div className="mx-auto max-w-6xl">
-        <SectionHeading
-          eyebrow="About"
-          title="Engineering journey"
-          description="From full-stack product engineering to leading enterprise Generative AI initiatives in regulated environments."
-        />
-
-        <motion.div
-          variants={staggerContainer(0.1)}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: '-10% 0px' }}
-          className="grid gap-6 sm:grid-cols-2"
-        >
-          {pillars.map(({ icon: Icon, title, description }) => (
-            <motion.div key={title} variants={fadeUp}>
-              <Card className="h-full">
-                <div className="mb-4 inline-flex rounded-xl bg-accent/10 p-3 text-accent">
-                  <Icon size={22} />
-                </div>
-                <h3 className="font-display text-lg font-semibold text-text">{title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-text-muted">{description}</p>
-              </Card>
-            </motion.div>
-          ))}
-        </motion.div>
+    <section id="about" className="border-y border-border bg-surface px-6 py-20">
+      <div className="mx-auto grid max-w-6xl gap-10 md:grid-cols-[0.7fr_1.3fr]">
+        <div><p className="eyebrow text-accent">05 / A little context</p><h2 className="mt-4 font-display text-3xl font-semibold tracking-tight">A builder with<br />a systems perspective.</h2></div>
+        <div>
+          <p className="text-base leading-8 text-text-muted">My path has taken me through event technology, education, creator analytics, and enterprise AI. Across those domains, I’ve built interfaces, backend services, integrations, and cloud systems—and led a team of six engineers.</p>
+          <p className="mt-4 text-base leading-8 text-text-muted">I’m looking for a full-time Forward Deployed Engineer role where I can combine that breadth with hands-on delivery: understand a complex requirement, design a workable solution, and see it through to production.</p>
+          <a href={personal.resumeUrl} target="_blank" rel="noopener noreferrer" className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-accent">Read my résumé <ArrowUpRight size={16} /></a>
+          <details className="mt-8 border-t border-border pt-5">
+            <summary className="text-sm font-medium">Earlier explorations · VR, tooling & game development</summary>
+            <div className="mt-6 space-y-6">
+              {projects.map(project => (
+                <article key={project.title} className="flex flex-col gap-4 sm:flex-row">
+                  <img src={project.image} alt="" loading="lazy" className="aspect-video w-full rounded-sm object-cover sm:w-28 sm:self-start" />
+                  <div><h3 className="text-sm font-semibold">{project.title}</h3><p className="mt-1 text-xs leading-6 text-text-muted" dangerouslySetInnerHTML={{ __html: project.description }} />{project.githubUrl && <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="mt-2 inline-flex items-center gap-1 text-xs text-accent">View source <ArrowUpRight size={12} /></a>}</div>
+                </article>
+              ))}
+            </div>
+          </details>
+        </div>
       </div>
     </section>
   )

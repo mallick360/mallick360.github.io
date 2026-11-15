@@ -1,0 +1,43 @@
+// Professional work summarized from the existing employment history.
+// The diagrams describe capability areas, not confidential deployment topologies.
+export const caseStudies = [
+  {
+    id: 'hypio', company: 'Only Much Louder / Hyp.io', period: '2023–2025',
+    title: 'Connecting product workflows with data at scale.',
+    summary: 'Full-stack engineering for a creator analytics platform serving 100+ customers, with insights across 280M+ creator profiles.',
+    scope: 'Product interfaces · Backend services · Integrations · Cloud',
+    problem: 'Support creator discovery and analytics alongside the contract, billing, and access-control workflows that enterprise teams need.',
+    ownership: 'Led development of a creator analytics microservice and delivered contract workflows, credits-based billing, transaction APIs, and client- and sales-facing interfaces. Led and mentored a six-person engineering team.',
+    decisions: 'Used Django, Go, PostgreSQL, and React across the analytics service. Integrated the Meta Graph API with OAuth 2.0 and implemented attribute-based permissions to control view and edit access.',
+    outcome: 'Delivered analytics for a platform serving 100+ customers, with sub-second retrieval for the Meta integration covering 200K+ creators.',
+    signals: ['100+ platform customers', '200K+ creators in Meta integration'],
+    flow: ['Product workflows', 'APIs & access control', 'Analytics & integrations'],
+    stack: ['React', 'Django', 'Go', 'PostgreSQL', 'AWS'],
+  },
+  {
+    id: 'healthcare-ai', company: 'enGen Global', period: '2025–Present',
+    title: 'Making enterprise AI work within real constraints.',
+    summary: 'Secure knowledge retrieval, governed AI assistants, and evaluation for a regulated U.S. healthcare environment.',
+    scope: 'Solution architecture · AI systems · Security · Observability',
+    problem: 'Enable individual users and teams to use enterprise knowledge through AI assistants while respecting sensitive data, access policies, and governance requirements.',
+    ownership: 'Architected and implemented RAG solutions, built LLM evaluation and observability pipelines, and collaborated with engineering, security, and business stakeholders on access controls and policy enforcement.',
+    decisions: 'Combined Gemini and Vertex AI with secure retrieval and fine-grained access control. Established evaluation, guardrails, and operational monitoring as part of delivery, including response quality, latency, and reliability.',
+    outcome: 'Delivered policy-driven AI assistants and reusable evaluation, monitoring, and deployment capabilities.',
+    signals: ['Governed knowledge retrieval', 'Evaluation & production monitoring'],
+    flow: ['Knowledge & permissions', 'Retrieval & generation', 'Evaluation & monitoring'],
+    stack: ['Python', 'Gemini', 'Vertex AI', 'GCP', 'React'],
+  },
+  {
+    id: 'coaching', company: 'enGen Global', period: '2025–Present',
+    title: 'Turning live conversation into a learning experience.',
+    summary: 'A GenAI coaching platform for customer service representatives, built around real-time voice simulations and personalized feedback.',
+    scope: 'Applied AI · Real-time interaction · Training workflows',
+    problem: 'Give customer service representatives a way to practice conversations and receive feedback through realistic voice-based learning simulations.',
+    ownership: 'Built a GenAI-powered coaching platform using Gemini Live Audio, bringing real-time conversation, training simulations, and personalized feedback into a learning workflow.',
+    decisions: 'Used live audio interaction to support conversational practice, with feedback connected to the training experience. This work brought applied AI into a concrete operational workflow.',
+    outcome: 'Enabled voice-based learning simulations and personalized feedback for representative training.',
+    signals: ['Real-time voice interaction', 'Personalized training feedback'],
+    flow: ['Practice conversation', 'Gemini Live Audio', 'Training feedback'],
+    stack: ['Gemini Live Audio', 'Generative AI'],
+  },
+]

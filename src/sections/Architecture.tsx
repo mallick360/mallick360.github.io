@@ -1,47 +1,29 @@
-import { motion } from 'framer-motion'
-import { Check } from 'lucide-react'
-import { architecturePillars } from '@/constants/content'
+import { architecturePillars, skills } from '@/constants/content'
 import { SectionHeading } from '@/components/SectionHeading'
-import { Card } from '@/components/Card'
-import { staggerContainer, fadeUp } from '@/animations/variants'
 
 export function Architecture() {
   return (
-    <section id="architecture" className="px-6 py-24">
+    <section id="architecture" className="px-6 py-20 sm:py-24">
       <div className="mx-auto max-w-6xl">
-        <SectionHeading
-          eyebrow="Architecture"
-          title="Where I operate in the stack"
-          description="Six pillars of hands-on expertise, from generative AI systems down to cloud infrastructure."
-        />
-
-        <motion.div
-          variants={staggerContainer(0.1)}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: '-10% 0px' }}
-          className="grid gap-6 md:grid-cols-2 lg:grid-cols-3"
-        >
+        <SectionHeading eyebrow="03 / Engineering breadth" title="Across the stack. Across system boundaries." description="A full-stack foundation, with hands-on experience in solution architecture, applied AI, cloud infrastructure, and production operations." />
+        <div className="grid gap-x-10 md:grid-cols-2">
           {architecturePillars.map((pillar, i) => (
-            <motion.div key={pillar.title} variants={fadeUp}>
-              <Card className="h-full">
-                <span className="font-display text-xs font-semibold text-accent">
-                  {String(i + 1).padStart(2, '0')}
-                </span>
-                <h3 className="mt-2 font-display text-lg font-semibold text-text">{pillar.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-text-muted">{pillar.description}</p>
-                <ul className="mt-4 space-y-2 border-t border-border pt-4">
-                  {pillar.items.map((item) => (
-                    <li key={item} className="flex items-start gap-2 text-sm text-text-muted">
-                      <Check size={15} className="mt-0.5 shrink-0 text-accent" />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </Card>
-            </motion.div>
+            <div key={pillar.title} className="flex gap-5 border-t border-border py-7">
+              <span className="pt-1 font-mono text-xs text-accent">0{i + 1}</span>
+              <div>
+                <h3 className="font-display text-lg font-semibold">{pillar.title}</h3>
+                <p className="mt-2 text-sm leading-7 text-text-muted">{pillar.description}</p>
+                <p className="mt-3 text-xs leading-6 text-text-faint">{pillar.items.join(' / ')}</p>
+              </div>
+            </div>
           ))}
-        </motion.div>
+        </div>
+        <details className="mt-6 border-y border-border py-5">
+          <summary className="text-sm font-medium text-accent">Explore the full technology toolkit</summary>
+          <dl className="mt-6 grid gap-6 pb-3 sm:grid-cols-2">
+            {skills.map(category => <div key={category.heading}><dt className="eyebrow text-text">{category.heading}</dt><dd className="mt-2 text-sm leading-7 text-text-muted">{category.items.map(item => item.name).join(' · ')}</dd></div>)}
+          </dl>
+        </details>
       </div>
     </section>
   )

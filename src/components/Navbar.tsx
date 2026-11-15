@@ -29,7 +29,7 @@ export function Navbar() {
     <header
       className={cn(
         'fixed inset-x-0 top-0 z-40 transition-all duration-300',
-        scrolled ? 'glass shadow-lg shadow-black/20' : 'bg-transparent',
+        scrolled ? 'border-b border-border bg-bg/95 backdrop-blur-md' : 'bg-bg/95',
       )}
     >
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
@@ -37,7 +37,7 @@ export function Navbar() {
           onClick={() => handleNavClick('#home')}
           className="font-display text-lg font-semibold text-text"
         >
-          {personal.name.split(' ')[0]}
+          {personal.name}
           <span className="text-accent">.</span>
         </button>
 
@@ -61,7 +61,7 @@ export function Navbar() {
 
         <div className="hidden md:block">
           <Button variant="ghost" onClick={() => handleNavClick('#contact')} className="!py-2">
-            Contact Me
+            Get in touch
           </Button>
         </div>
 
@@ -69,6 +69,8 @@ export function Navbar() {
           className="text-text md:hidden"
           onClick={() => setMenuOpen((prev) => !prev)}
           aria-label="Toggle menu"
+          aria-expanded={menuOpen}
+          aria-controls="mobile-navigation"
         >
           {menuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
@@ -81,6 +83,7 @@ export function Navbar() {
             animate={{ height: 'auto', opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.25 }}
+            id="mobile-navigation"
             className="glass overflow-hidden md:hidden"
           >
             {navItems.map((item) => (

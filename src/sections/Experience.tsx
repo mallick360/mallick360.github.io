@@ -5,11 +5,11 @@ import { TimelineItem } from '@/components/TimelineItem'
 export function Experience() {
   return (
     <section id="experience" className="px-6 py-24">
-      <div className="mx-auto max-w-3xl">
+      <div className="mx-auto max-w-6xl">
         <SectionHeading
-          eyebrow="Experience"
-          title="Work experience"
-          description="Seven years across AI platforms, ad-tech, ed-tech, and event-tech — from individual contributor to technical lead."
+          eyebrow="04 / Experience"
+          title="A foundation built in production."
+          description="7+ years across enterprise AI, creator analytics, education, and event technology. Official roles and the work behind them."
         />
 
         <div className="relative space-y-8 border-l border-transparent">

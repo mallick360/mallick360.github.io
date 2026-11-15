@@ -1,134 +1,65 @@
-import { useEffect, useState } from 'react'
-import { AnimatePresence, motion } from 'framer-motion'
-import { Download, MoveRight } from 'lucide-react'
-import { FaGithub as Github, FaLinkedin as Linkedin } from 'react-icons/fa6'
-import { personal, socialLinks } from '@/constants/content'
+import { ArrowDown, ArrowDownRight, ArrowUpRight, Download } from 'lucide-react'
+import { personal } from '@/constants/content'
 import { Button } from '@/components/Button'
-import { scrollToSection } from '@/utils/scroll'
-import { staggerContainer, fadeUp } from '@/animations/variants'
 
-const iconMap = { github: Github, linkedin: Linkedin }
-
-function RotatingRole() {
-  const [index, setIndex] = useState(0)
-
-  useEffect(() => {
-    const id = setInterval(() => {
-      setIndex((prev) => (prev + 1) % personal.roles.length)
-    }, 2400)
-    return () => clearInterval(id)
-  }, [])
-
-  return (
-    <div className="h-9 overflow-hidden sm:h-10">
-      <AnimatePresence mode="wait">
-        <motion.p
-          key={personal.roles[index]}
-          initial={{ y: 24, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          exit={{ y: -24, opacity: 0 }}
-          transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-          className="font-display text-2xl font-semibold text-accent sm:text-3xl"
-        >
-          {personal.roles[index]}
-        </motion.p>
-      </AnimatePresence>
-    </div>
-  )
-}
-
-const codeSnippet = `const engineer = {
-  name: "Aashish Mallick",
-  focus: "GenAI · RAG · Cloud",
-  stack: ["Python", "GCP", "React"],
-  status: "shipping"
-}`
+const layers = [
+  { title: 'Product & interfaces', detail: 'React · Next.js · TypeScript', width: 'w-full' },
+  { title: 'Services & integrations', detail: 'Python · Go · APIs · Permissions', width: 'w-[92%]' },
+  { title: 'Intelligence & data', detail: 'AI agents · RAG · SQL · Kafka', width: 'w-[84%]' },
+  { title: 'Infrastructure & operations', detail: 'AWS · GCP · Docker · Observability', width: 'w-[76%]' },
+]
 
 export function Hero() {
   return (
-    <section id="home" className="relative flex min-h-screen items-center pt-28 pb-20">
-      <div className="mx-auto grid w-full max-w-6xl items-center gap-16 px-6 lg:grid-cols-[1.1fr_0.9fr]">
-        <motion.div
-          variants={staggerContainer(0.12)}
-          initial="hidden"
-          animate="visible"
-        >
-          <motion.div
-            variants={fadeUp}
-            className="mb-6 inline-flex items-center gap-2 rounded-full border border-border bg-surface px-4 py-1.5"
-          >
-            <span className="relative flex h-2 w-2">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-75" />
-              <span className="relative inline-flex h-2 w-2 rounded-full bg-accent" />
-            </span>
-            <span className="text-xs font-medium text-text-muted">{personal.availability}</span>
-          </motion.div>
-
-          <motion.h1
-            variants={fadeUp}
-            className="font-display text-4xl font-bold leading-[1.1] text-text sm:text-5xl lg:text-6xl"
-          >
-            {personal.name}
-          </motion.h1>
-
-          <motion.div variants={fadeUp} className="mt-3">
-            <RotatingRole />
-          </motion.div>
-
-          <motion.p variants={fadeUp} className="mt-6 max-w-xl text-base leading-relaxed text-text-muted">
-            {personal.bio}
-          </motion.p>
-
-          <motion.div variants={fadeUp} className="mt-8 flex flex-wrap items-center gap-4">
-            <Button href={personal.resumeUrl} target="_blank" icon={<Download size={16} />}>
-              Download Resume
-            </Button>
-            <Button variant="ghost" onClick={() => scrollToSection('#contact')}>
-              Contact
-            </Button>
-            <Button
-              variant="ghost"
-              icon={<MoveRight size={16} />}
-              onClick={() => scrollToSection('#experience')}
-            >
-              View Experience
-            </Button>
-          </motion.div>
-
-          <motion.div variants={fadeUp} className="mt-8 flex items-center gap-5">
-            {socialLinks.map((link) => {
-              const Icon = iconMap[link.icon]
-              return (
-                <a
-                  key={link.url}
-                  href={link.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={link.label}
-                  className="text-text-muted transition-colors hover:text-accent"
-                >
-                  <Icon size={22} />
-                </a>
-              )
-            })}
-          </motion.div>
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0, scale: 0.94 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
-          className="glass hidden rounded-2xl p-5 font-mono text-sm shadow-2xl shadow-black/40 lg:block"
-        >
-          <div className="mb-4 flex gap-1.5">
-            <span className="h-3 w-3 rounded-full bg-[#ff5f56]" />
-            <span className="h-3 w-3 rounded-full bg-[#ffbd2e]" />
-            <span className="h-3 w-3 rounded-full bg-[#27c93f]" />
+    <section id="home" className="px-6 pb-14 pt-36 sm:pt-44">
+      <div className="mx-auto max-w-6xl">
+        <div className="mb-8 flex items-center gap-2 text-xs font-medium text-accent">
+          <span className="h-1.5 w-1.5 rounded-full bg-accent" />
+          {personal.availability}
+        </div>
+        <div className="grid items-center gap-12 lg:grid-cols-[1.2fr_1fr] lg:gap-16">
+          <div>
+            <p className="eyebrow mb-5 text-text-muted">Full-stack engineering / Systems & solution architecture</p>
+            <h1 className="font-display text-[clamp(2.8rem,5.2vw,4.75rem)] font-semibold leading-[1.08] tracking-[-0.055em]">
+              From complex<br />requirements to<br /><span className="text-accent">production systems.</span>
+            </h1>
+            <p className="mt-7 max-w-xl text-base leading-8 text-text-muted">{personal.bio}</p>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <Button href="#work" icon={<ArrowDownRight size={16} />}>Explore my work</Button>
+              <Button variant="ghost" href={personal.resumeUrl} target="_blank" icon={<Download size={16} />}>Download résumé</Button>
+            </div>
+            <a href="#experience" className="mt-6 inline-flex items-center gap-2 text-sm text-text-muted hover:text-accent">View experience <ArrowUpRight size={15} /></a>
           </div>
-          <pre className="whitespace-pre-wrap text-text-muted">
-            <code>{codeSnippet}</code>
-          </pre>
-        </motion.div>
+          <figure className="blueprint relative border border-border p-6 sm:p-8">
+            <figcaption className="mb-10 flex justify-between gap-3">
+              <span className="eyebrow text-text-muted">01 / Span of ownership</span>
+              <ArrowDownRight size={20} className="text-accent" />
+            </figcaption>
+            <div className="space-y-3">
+              {layers.map((layer, i) => (
+                <div key={layer.title} className={`relative border border-[#bec8b7] bg-surface px-4 py-4 shadow-[3px_3px_0_#d9dfd3] ${layer.width}`}>
+                  <span className="absolute right-3 top-3 font-mono text-[10px] text-text-faint">0{i + 1}</span>
+                  <p className="pr-3 font-display text-sm font-semibold">{layer.title}</p>
+                  <p className="mt-1 text-[11px] leading-5 text-text-muted">{layer.detail}</p>
+                </div>
+              ))}
+            </div>
+            <div className="mt-8 flex items-center gap-3 border-t border-[#cbd3c4] pt-5">
+              <ArrowDown size={16} className="text-accent" />
+              <p className="font-mono text-[10px] uppercase tracking-widest text-text-muted">Architecture → Implementation → Operation</p>
+            </div>
+          </figure>
+        </div>
+        <div className="mt-16 grid grid-cols-2 gap-6 border-y border-border py-7 md:grid-cols-4">
+          {[
+            ['7+ years', 'Building production software'],
+            ['280M+', 'Creator profiles · Hyp.io platform'],
+            ['6 engineers', 'Team led & mentored'],
+            ['AWS + GCP', 'Cloud architecture & delivery'],
+          ].map(([value, label]) => (
+            <div key={label}><p className="font-display text-2xl font-semibold tracking-tight">{value}</p><p className="mt-1 text-xs leading-5 text-text-muted">{label}</p></div>
+          ))}
+        </div>
       </div>
     </section>
   )

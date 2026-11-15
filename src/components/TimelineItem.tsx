@@ -26,7 +26,7 @@ export function TimelineItem({ experience, index }: { experience: Experience; in
         <span className="absolute -top-8 left-[5px] h-8 w-px bg-border" aria-hidden />
       )}
 
-      <div className="glass rounded-2xl p-6">
+      <div className="border-t border-border py-6">
         <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
           <h3 className="font-display text-lg font-semibold text-text">
             {experience.company} <span className="text-text-muted">| {experience.role}</span>
@@ -46,6 +46,7 @@ export function TimelineItem({ experience, index }: { experience: Experience; in
 
         {hasMore && (
           <button
+            aria-expanded={expanded}
             onClick={() => setExpanded((prev) => !prev)}
             className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-accent hover:text-accent-soft"
           >
