@@ -1,70 +1,38 @@
-import { ArrowDown, ArrowUpRight, Braces, Database, Layers3, Network } from 'lucide-react'
-import { personal } from '@/constants/content'
+import { ArrowDownRight, ArrowUpRight, Download } from 'lucide-react'
+import { personal, socialLinks } from '@/constants/content'
 import { Button } from '@/components/Button'
-
-const capabilities = [
-  { icon: Layers3, title: 'Product', detail: 'Interfaces & workflows', stack: 'React / Next.js' },
-  { icon: Braces, title: 'Services', detail: 'APIs & integrations', stack: 'Python / Go' },
-  { icon: Database, title: 'Intelligence', detail: 'AI & data systems', stack: 'Gemini / SQL' },
-  { icon: Network, title: 'Infrastructure', detail: 'Deploy & operate', stack: 'AWS / GCP' },
-]
+import { EngineeringOverview } from '@/components/EngineeringOverview'
 
 export function Hero() {
   return (
-    <section id="home" className="relative overflow-hidden px-6 pb-0 pt-32 sm:pt-40">
-      <div aria-hidden className="pointer-events-none absolute right-[-12rem] top-16 h-[35rem] w-[35rem] rounded-full bg-accent/[0.035] blur-3xl" />
-      <div className="relative mx-auto max-w-6xl">
-        <div className="mb-10 flex flex-wrap items-center justify-between gap-4 border-b border-border pb-5">
-          <p className="eyebrow text-text-muted">Aashish Mallick / Engineering portfolio</p>
-          <span className="inline-flex items-center gap-2 text-xs text-accent"><span className="h-1.5 w-1.5 rounded-full bg-accent" />Seeking full-time FDE roles</span>
+    <section id="home" className="relative overflow-hidden px-6 pb-12 pt-32 sm:pt-44">
+      <div aria-hidden className="pointer-events-none absolute -right-64 top-[-20rem] h-[50rem] w-[50rem] rounded-full bg-accent/[0.055] blur-[100px]" />
+      <div className="section-shell relative">
+        <div className="mb-8 flex items-center gap-3">
+          <span className="h-2 w-2 rounded-full bg-accent shadow-[0_0_16px_color-mix(in_srgb,var(--color-accent)_33%,transparent)]" />
+          <p className="eyebrow text-accent">Seeking full-time Forward Deployed Engineer roles</p>
         </div>
-        <div className="grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:gap-14">
+        <div className="grid gap-8 lg:grid-cols-[1.45fr_0.95fr] lg:items-center lg:gap-12">
           <div>
-            <p className="eyebrow mb-6 text-accent">Full-stack engineer · Systems thinker</p>
-            <h1 className="font-display text-[clamp(3rem,6.7vw,6rem)] font-medium leading-[0.98] tracking-[-0.065em]">
-              Complex<br />problems.<br /><span className="text-accent">Working<br />systems.</span>
+            <p className="mb-5 text-sm text-text-muted">Aashish Mallick / Full-stack engineer & systems architect</p>
+            <h1 className="font-display text-[clamp(2.8rem,6vw,5.1rem)] font-medium leading-[1.07] tracking-[-0.065em]">
+              I turn complex<br />requirements into<br /><span className="text-accent">working software.</span>
             </h1>
-            <p className="mt-8 max-w-md text-base leading-8 text-text-muted">{personal.bio}</p>
+            <p className="mt-7 max-w-lg text-sm leading-7 text-text-muted">From the interface to the infrastructure, I connect product engineering, system design, and applied AI to own delivery into production.</p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <Button href="#work" icon={<ArrowDown size={15} />}>Explore my work</Button>
-              <Button variant="ghost" href={personal.resumeUrl} target="_blank" icon={<ArrowUpRight size={15} />}>View résumé</Button>
+              <Button href="#work" icon={<ArrowDownRight size={16} />}>Explore selected work</Button>
+              <Button href={personal.resumeUrl} target="_blank" variant="ghost" icon={<Download size={15} />}>Download résumé</Button>
             </div>
+            <div className="mt-6 flex flex-wrap gap-x-5 gap-y-3">{socialLinks.map(link => <a key={link.url} href={link.url} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-xs text-text-muted hover:text-accent">{link.label}<ArrowUpRight size={13} /></a>)}</div>
           </div>
-          <div className="lg:pt-5">
-            <figure className="blueprint overflow-hidden rounded-xl border border-border">
-              <figcaption className="flex items-center justify-between border-b border-border bg-surface/90 px-5 py-4">
-                <span className="eyebrow text-text-muted">System view / My span of ownership</span><span className="font-mono text-[10px] text-accent">01—04</span>
-              </figcaption>
-              <div className="px-5 py-7 sm:px-8">
-                <div className="mx-auto w-fit rounded-full border border-accent/40 bg-bg px-5 py-2 text-xs text-accent">Business requirements</div>
-                <div aria-hidden className="mx-auto h-6 w-px bg-accent/40" />
-                <div className="grid grid-cols-2 gap-3 sm:gap-4">
-                  {capabilities.map(({ icon: Icon, title, detail, stack }, index) => (
-                    <div key={title} className="system-node rounded-lg p-4">
-                      <div className="flex items-center justify-between"><Icon size={19} strokeWidth={1.4} className="text-accent" /><span className="font-mono text-[10px] text-text-faint">0{index + 1}</span></div>
-                      <h2 className="mt-5 font-display text-sm font-medium sm:text-base">{title}</h2>
-                      <p className="mt-1 text-[11px] leading-5 text-text-muted">{detail}</p>
-                      <p className="mt-3 border-t border-border pt-3 font-mono text-[9px] text-text-faint sm:text-[10px]">{stack}</p>
-                    </div>
-                  ))}
-                </div>
-                <div aria-hidden className="mx-auto h-6 w-px bg-accent/40" />
-                <div className="mx-auto w-fit rounded-full border border-accent/40 bg-accent/10 px-5 py-2 text-xs text-accent">Production delivery</div>
-              </div>
-              <div className="flex items-center justify-between gap-3 border-t border-border bg-surface/90 px-5 py-4 text-[10px] text-text-faint"><span>Design. Build. Integrate. Operate.</span><ArrowUpRight size={14} className="text-accent" /></div>
-            </figure>
-            <p className="mt-5 max-w-sm text-xs leading-6 text-text-faint">Full-stack depth, solution architecture, and hands-on delivery across the boundaries of a system.</p>
-          </div>
+          <EngineeringOverview />
         </div>
-        <div className="mt-16 grid grid-cols-2 border-y border-border md:grid-cols-4">
+        <div className="mt-14 grid border-t border-border sm:grid-cols-3">
           {[
-            ['7+', 'Years building production software'],
-            ['280M+', 'Creator profiles · Hyp.io platform'],
-            ['06', 'Engineers led & mentored'],
-            ['02', 'Cloud platforms · AWS & GCP'],
-          ].map(([value, label], index) => (
-            <div key={label} className={`py-7 pr-4 ${index % 2 === 1 ? 'border-l border-border pl-6' : ''} ${index === 2 ? 'md:border-l md:border-border md:pl-6' : ''}`}><p className="font-display text-4xl font-medium tracking-tight text-accent">{value}</p><p className="mt-2 text-[11px] leading-5 text-text-muted">{label}</p></div>
-          ))}
+            ['01', '7+ years of engineering', 'Production software across four industries'],
+            ['02', 'Full-stack to architecture', 'Interfaces, services, integrations & cloud'],
+            ['03', 'Hands-on technical leadership', 'Led and mentored a six-engineer team'],
+          ].map(([number, title, detail]) => <div key={number} className="flex gap-4 border-b border-border py-6 sm:pr-5"><span className="pt-1 font-mono text-[10px] text-accent">{number}</span><div><p className="font-display text-sm font-semibold">{title}</p><p className="mt-1 text-xs leading-6 text-text-faint">{detail}</p></div></div>)}
         </div>
       </div>
     </section>

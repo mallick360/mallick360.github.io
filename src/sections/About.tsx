@@ -3,9 +3,9 @@ import { personal, projects } from '@/constants/content'
 
 export function About() {
   return (
-    <section id="about" className="border-y border-border bg-surface px-6 py-20">
+    <section id="about" className="border-y border-border bg-surface/40 px-6 py-20">
       <div className="mx-auto grid max-w-6xl gap-10 md:grid-cols-[0.7fr_1.3fr]">
-        <div><p className="eyebrow text-accent">05 / A little context</p><h2 className="mt-4 font-display text-3xl font-semibold tracking-tight">A builder with<br />a systems perspective.</h2></div>
+        <div><p className="eyebrow text-accent">04 / Beyond the job title</p><h2 className="mt-4 font-display text-3xl font-medium tracking-[-0.04em]">A builder with<br />a systems perspective.</h2></div>
         <div>
           <p className="text-base leading-8 text-text-muted">My path has taken me through event technology, education, creator analytics, and enterprise AI. Across those domains, I’ve built interfaces, backend services, integrations, and cloud systems—and led a team of six engineers.</p>
           <p className="mt-4 text-base leading-8 text-text-muted">I’m looking for a full-time Forward Deployed Engineer role where I can combine that breadth with hands-on delivery: understand a complex requirement, design a workable solution, and see it through to production.</p>

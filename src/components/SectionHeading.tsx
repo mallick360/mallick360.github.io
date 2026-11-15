@@ -19,7 +19,7 @@ export function SectionHeading({ eyebrow, title, description }: SectionHeadingPr
       <span className="eyebrow text-accent">
         {eyebrow}
       </span>
-      <h2 className="mt-3 font-display text-3xl font-medium leading-[1.1] tracking-[-0.04em] text-text sm:text-5xl">{title}</h2>
+      <h2 className="mt-3 font-display text-3xl font-medium leading-[1.1] tracking-[-0.04em] text-text sm:text-[2.65rem]">{title}</h2>
       {description && <p className="mt-4 text-base leading-relaxed text-text-muted">{description}</p>}
     </motion.div>
   )

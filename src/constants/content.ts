@@ -210,9 +210,7 @@ export const skills: SkillCategory[] = [
 
 export const achievements: Achievement[] = [
   { value: 7, suffix: '+', label: 'Years of Engineering Experience' },
-  { value: 280, suffix: 'M+', label: 'Creators Analyzed (Hyp.io)' },
   { value: 100, suffix: '+', label: 'Enterprise Customers Served' },
-  { value: 200, suffix: 'K+', label: 'Creators — Real-Time Analytics' },
   { value: 99.99, suffix: '%', label: 'Cloud Infrastructure Uptime' },
   { value: 30, suffix: '%', label: 'Sprint Velocity Improvement' },
 ]

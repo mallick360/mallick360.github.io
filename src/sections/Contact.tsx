@@ -38,7 +38,7 @@ export function Contact() {
     <section id="contact" className="px-6 py-24">
       <div className="mx-auto max-w-6xl">
         <SectionHeading
-          eyebrow="06 / Get in touch"
+          eyebrow="05 / The next chapter"
           title="Let’s talk about your engineering team."
           description="Considering me for a full-time Forward Deployed Engineer role? Share the role, the team, and the problems you’re working on."
         />
@@ -49,15 +49,15 @@ export function Contact() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: '-10% 0px' }}
-            className="glass flex flex-col justify-between rounded-md p-8"
+            className="flex flex-col justify-between rounded-xl border border-border bg-surface p-6 sm:p-8"
           >
             <div>
-              <h3 className="font-display text-xl font-semibold text-text">Full-stack depth. Systems perspective.</h3>
+              <h3 className="font-display text-xl font-semibold text-text">Looking for an engineer who owns the whole problem?</h3>
               <p className="mt-2 text-sm text-text-muted">
                 Currently building AI platforms at enGen Global. For full-time engineering opportunities, connect with me on LinkedIn or send a message here.
               </p>
             </div>
-            <div className="mt-8 flex gap-4">
+            <div className="mt-8 flex flex-wrap gap-3">
               {socialLinks.map((link) => {
                 const Icon = iconMap[link.icon]
                 return (
@@ -82,7 +82,7 @@ export function Contact() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: '-10% 0px' }}
-            className="glass space-y-4 rounded-md p-8"
+            className="work-panel space-y-4 rounded-xl p-6 sm:p-8"
           >
             <div className="grid gap-4 sm:grid-cols-2">
               <input
@@ -92,7 +92,7 @@ export function Contact() {
                 aria-label="Your name"
                 autoComplete="name"
                 placeholder="Your name"
-                className="rounded-md border border-border bg-surface px-4 py-3 text-sm text-text placeholder:text-text-faint focus:border-accent focus:outline-none"
+                className="min-w-0 w-full rounded-md border border-border bg-surface px-4 py-3 text-sm text-text placeholder:text-text-faint focus:border-accent focus:outline-none"
               />
               <input
                 type="email"
@@ -101,7 +101,7 @@ export function Contact() {
                 aria-label="Email address"
                 autoComplete="email"
                 placeholder="Email address"
-                className="rounded-md border border-border bg-surface px-4 py-3 text-sm text-text placeholder:text-text-faint focus:border-accent focus:outline-none"
+                className="min-w-0 w-full rounded-md border border-border bg-surface px-4 py-3 text-sm text-text placeholder:text-text-faint focus:border-accent focus:outline-none"
               />
             </div>
             <input

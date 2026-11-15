@@ -1,3 +1,4 @@
+import { AccentPreview } from '@/components/AccentPreview'
 import { Outlet } from 'react-router-dom'
 import { Navbar } from '@/components/Navbar'
 import { Footer } from '@/components/Footer'
@@ -13,6 +14,7 @@ export function MainLayout() {
         <Outlet />
       </main>
       <Footer />
+      {(new URLSearchParams(window.location.search).get('themePreview') === '1') && <AccentPreview />}
     </div>
   )
 }
