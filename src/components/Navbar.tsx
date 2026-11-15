@@ -38,7 +38,7 @@ export function Navbar() {
           className="font-display text-lg font-semibold text-text"
         >
           {personal.name}
-          <span className="text-accent">.</span>
+          <span className="ml-2 font-mono text-xs text-accent">[am]</span>
         </button>
 
         <ul className="hidden items-center gap-8 md:flex">

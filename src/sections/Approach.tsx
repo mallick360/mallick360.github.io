@@ -14,9 +14,9 @@ export function Approach() {
         <SectionHeading eyebrow="02 / How I work" title="Stay close to the problem. Own the delivery." description="The connection between business requirements and working software is where I do my best work." />
         <ol className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {steps.map(([title, description, evidence], index) => (
-            <li key={title} className="border-t border-border pt-5">
+            <li key={title} className="border-l border-accent/30 pl-5">
               <span className="font-mono text-xs text-accent">0{index + 1}</span>
-              <h3 className="mt-5 font-display text-lg font-semibold">{title}</h3>
+              <h3 className="mt-5 font-display text-lg font-medium">{title}</h3>
               <p className="mt-3 text-sm leading-7 text-text-muted">{description}</p>
               <p className="mt-5 text-xs leading-6 text-text-faint">{evidence}</p>
             </li>

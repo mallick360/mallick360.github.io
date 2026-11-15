@@ -1,63 +1,69 @@
-import { ArrowDown, ArrowDownRight, ArrowUpRight, Download } from 'lucide-react'
+import { ArrowDown, ArrowUpRight, Braces, Database, Layers3, Network } from 'lucide-react'
 import { personal } from '@/constants/content'
 import { Button } from '@/components/Button'
 
-const layers = [
-  { title: 'Product & interfaces', detail: 'React · Next.js · TypeScript', width: 'w-full' },
-  { title: 'Services & integrations', detail: 'Python · Go · APIs · Permissions', width: 'w-[92%]' },
-  { title: 'Intelligence & data', detail: 'AI agents · RAG · SQL · Kafka', width: 'w-[84%]' },
-  { title: 'Infrastructure & operations', detail: 'AWS · GCP · Docker · Observability', width: 'w-[76%]' },
+const capabilities = [
+  { icon: Layers3, title: 'Product', detail: 'Interfaces & workflows', stack: 'React / Next.js' },
+  { icon: Braces, title: 'Services', detail: 'APIs & integrations', stack: 'Python / Go' },
+  { icon: Database, title: 'Intelligence', detail: 'AI & data systems', stack: 'Gemini / SQL' },
+  { icon: Network, title: 'Infrastructure', detail: 'Deploy & operate', stack: 'AWS / GCP' },
 ]
 
 export function Hero() {
   return (
-    <section id="home" className="px-6 pb-14 pt-36 sm:pt-44">
-      <div className="mx-auto max-w-6xl">
-        <div className="mb-8 flex items-center gap-2 text-xs font-medium text-accent">
-          <span className="h-1.5 w-1.5 rounded-full bg-accent" />
-          {personal.availability}
+    <section id="home" className="relative overflow-hidden px-6 pb-0 pt-32 sm:pt-40">
+      <div aria-hidden className="pointer-events-none absolute right-[-12rem] top-16 h-[35rem] w-[35rem] rounded-full bg-accent/[0.035] blur-3xl" />
+      <div className="relative mx-auto max-w-6xl">
+        <div className="mb-10 flex flex-wrap items-center justify-between gap-4 border-b border-border pb-5">
+          <p className="eyebrow text-text-muted">Aashish Mallick / Engineering portfolio</p>
+          <span className="inline-flex items-center gap-2 text-xs text-accent"><span className="h-1.5 w-1.5 rounded-full bg-accent" />Seeking full-time FDE roles</span>
         </div>
-        <div className="grid items-center gap-12 lg:grid-cols-[1.2fr_1fr] lg:gap-16">
+        <div className="grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:gap-14">
           <div>
-            <p className="eyebrow mb-5 text-text-muted">Full-stack engineering / Systems & solution architecture</p>
-            <h1 className="font-display text-[clamp(2.8rem,5.2vw,4.75rem)] font-semibold leading-[1.08] tracking-[-0.055em]">
-              From complex<br />requirements to<br /><span className="text-accent">production systems.</span>
+            <p className="eyebrow mb-6 text-accent">Full-stack engineer · Systems thinker</p>
+            <h1 className="font-display text-[clamp(3rem,6.7vw,6rem)] font-medium leading-[0.98] tracking-[-0.065em]">
+              Complex<br />problems.<br /><span className="text-accent">Working<br />systems.</span>
             </h1>
-            <p className="mt-7 max-w-xl text-base leading-8 text-text-muted">{personal.bio}</p>
+            <p className="mt-8 max-w-md text-base leading-8 text-text-muted">{personal.bio}</p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <Button href="#work" icon={<ArrowDownRight size={16} />}>Explore my work</Button>
-              <Button variant="ghost" href={personal.resumeUrl} target="_blank" icon={<Download size={16} />}>Download résumé</Button>
+              <Button href="#work" icon={<ArrowDown size={15} />}>Explore my work</Button>
+              <Button variant="ghost" href={personal.resumeUrl} target="_blank" icon={<ArrowUpRight size={15} />}>View résumé</Button>
             </div>
-            <a href="#experience" className="mt-6 inline-flex items-center gap-2 text-sm text-text-muted hover:text-accent">View experience <ArrowUpRight size={15} /></a>
           </div>
-          <figure className="blueprint relative border border-border p-6 sm:p-8">
-            <figcaption className="mb-10 flex justify-between gap-3">
-              <span className="eyebrow text-text-muted">01 / Span of ownership</span>
-              <ArrowDownRight size={20} className="text-accent" />
-            </figcaption>
-            <div className="space-y-3">
-              {layers.map((layer, i) => (
-                <div key={layer.title} className={`relative border border-[#bec8b7] bg-surface px-4 py-4 shadow-[3px_3px_0_#d9dfd3] ${layer.width}`}>
-                  <span className="absolute right-3 top-3 font-mono text-[10px] text-text-faint">0{i + 1}</span>
-                  <p className="pr-3 font-display text-sm font-semibold">{layer.title}</p>
-                  <p className="mt-1 text-[11px] leading-5 text-text-muted">{layer.detail}</p>
+          <div className="lg:pt-5">
+            <figure className="blueprint overflow-hidden rounded-xl border border-border">
+              <figcaption className="flex items-center justify-between border-b border-border bg-surface/90 px-5 py-4">
+                <span className="eyebrow text-text-muted">System view / My span of ownership</span><span className="font-mono text-[10px] text-accent">01—04</span>
+              </figcaption>
+              <div className="px-5 py-7 sm:px-8">
+                <div className="mx-auto w-fit rounded-full border border-accent/40 bg-bg px-5 py-2 text-xs text-accent">Business requirements</div>
+                <div aria-hidden className="mx-auto h-6 w-px bg-accent/40" />
+                <div className="grid grid-cols-2 gap-3 sm:gap-4">
+                  {capabilities.map(({ icon: Icon, title, detail, stack }, index) => (
+                    <div key={title} className="system-node rounded-lg p-4">
+                      <div className="flex items-center justify-between"><Icon size={19} strokeWidth={1.4} className="text-accent" /><span className="font-mono text-[10px] text-text-faint">0{index + 1}</span></div>
+                      <h2 className="mt-5 font-display text-sm font-medium sm:text-base">{title}</h2>
+                      <p className="mt-1 text-[11px] leading-5 text-text-muted">{detail}</p>
+                      <p className="mt-3 border-t border-border pt-3 font-mono text-[9px] text-text-faint sm:text-[10px]">{stack}</p>
+                    </div>
+                  ))}
                 </div>
-              ))}
-            </div>
-            <div className="mt-8 flex items-center gap-3 border-t border-[#cbd3c4] pt-5">
-              <ArrowDown size={16} className="text-accent" />
-              <p className="font-mono text-[10px] uppercase tracking-widest text-text-muted">Architecture → Implementation → Operation</p>
-            </div>
-          </figure>
+                <div aria-hidden className="mx-auto h-6 w-px bg-accent/40" />
+                <div className="mx-auto w-fit rounded-full border border-accent/40 bg-accent/10 px-5 py-2 text-xs text-accent">Production delivery</div>
+              </div>
+              <div className="flex items-center justify-between gap-3 border-t border-border bg-surface/90 px-5 py-4 text-[10px] text-text-faint"><span>Design. Build. Integrate. Operate.</span><ArrowUpRight size={14} className="text-accent" /></div>
+            </figure>
+            <p className="mt-5 max-w-sm text-xs leading-6 text-text-faint">Full-stack depth, solution architecture, and hands-on delivery across the boundaries of a system.</p>
+          </div>
         </div>
-        <div className="mt-16 grid grid-cols-2 gap-6 border-y border-border py-7 md:grid-cols-4">
+        <div className="mt-16 grid grid-cols-2 border-y border-border md:grid-cols-4">
           {[
-            ['7+ years', 'Building production software'],
+            ['7+', 'Years building production software'],
             ['280M+', 'Creator profiles · Hyp.io platform'],
-            ['6 engineers', 'Team led & mentored'],
-            ['AWS + GCP', 'Cloud architecture & delivery'],
-          ].map(([value, label]) => (
-            <div key={label}><p className="font-display text-2xl font-semibold tracking-tight">{value}</p><p className="mt-1 text-xs leading-5 text-text-muted">{label}</p></div>
+            ['06', 'Engineers led & mentored'],
+            ['02', 'Cloud platforms · AWS & GCP'],
+          ].map(([value, label], index) => (
+            <div key={label} className={`py-7 pr-4 ${index % 2 === 1 ? 'border-l border-border pl-6' : ''} ${index === 2 ? 'md:border-l md:border-border md:pl-6' : ''}`}><p className="font-display text-4xl font-medium tracking-tight text-accent">{value}</p><p className="mt-2 text-[11px] leading-5 text-text-muted">{label}</p></div>
           ))}
         </div>
       </div>

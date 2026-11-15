@@ -8,23 +8,23 @@ export function SelectedWork() {
     <section id="work" className="px-6 py-16 sm:py-24">
       <div className="mx-auto max-w-6xl">
         <SectionHeading eyebrow="01 / Selected professional work" title="Different problems. End-to-end ownership." description="Work across product engineering, systems architecture, and applied AI. Each example makes my contribution and the delivery context explicit." />
-        <div className="divide-y divide-border border-y border-border">
+        <div className="space-y-6">
           {caseStudies.map((study, index) => (
-            <article key={study.id} className="grid gap-8 py-10 lg:grid-cols-[0.85fr_1.15fr] lg:gap-14">
+            <article key={study.id} className="grid gap-8 rounded-xl border border-border bg-surface p-5 sm:p-8 lg:grid-cols-[0.85fr_1.15fr] lg:gap-14">
               <div>
                 <p className="eyebrow text-text-faint">0{index + 1} / {study.company}</p>
-                <h3 className="mt-4 font-display text-2xl font-semibold leading-tight tracking-tight sm:text-3xl">{study.title}</h3>
+                <h3 className="mt-4 font-display text-2xl font-medium leading-tight tracking-tight sm:text-3xl">{study.title}</h3>
                 <p className="mt-4 text-sm leading-7 text-text-muted">{study.summary}</p>
                 <p className="mt-5 text-xs leading-6 text-text-faint">{study.scope}</p>
                 <div className="mt-5 flex flex-wrap gap-2">{study.stack.map(tool => <Badge key={tool}>{tool}</Badge>)}</div>
               </div>
               <div>
-                <div className="blueprint border border-border p-5 sm:p-6">
+                <div className="blueprint rounded-lg border border-border p-5 sm:p-6">
                   <div className="mb-6 flex justify-between gap-4"><span className="eyebrow text-text-muted">Delivery scope / {study.period}</span><ArrowDownRight size={18} className="text-accent" /></div>
                   <ol className="flex flex-col gap-2 sm:flex-row sm:items-center">
                     {study.flow.map((step, i) => (
                       <li key={step} className="flex flex-1 items-center gap-2">
-                        <span className="flex min-h-16 flex-1 items-center border border-[#c8d0bf] bg-surface px-3 py-3 text-xs font-medium leading-5">{step}</span>
+                        <span className="flex min-h-16 flex-1 items-center rounded border border-border bg-bg/95 px-3 py-3 text-xs font-medium leading-5">{step}</span>
                         {i < study.flow.length - 1 && <ArrowRight size={14} aria-hidden className="hidden shrink-0 text-accent sm:block" />}
                       </li>
                     ))}
