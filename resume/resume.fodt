@@ -1,0 +1,180 @@
+<?xml version='1.0' encoding='utf-8'?>
+<office:document xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:fo="urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0" xmlns:meta="urn:oasis:names:tc:opendocument:xmlns:meta:1.0" xmlns:office="urn:oasis:names:tc:opendocument:xmlns:office:1.0" xmlns:style="urn:oasis:names:tc:opendocument:xmlns:style:1.0" xmlns:svg="urn:oasis:names:tc:opendocument:xmlns:svg-compatible:1.0" xmlns:text="urn:oasis:names:tc:opendocument:xmlns:text:1.0" xmlns:xlink="http://www.w3.org/1999/xlink" office:version="1.3" office:mimetype="application/vnd.oasis.opendocument.text">
+  <office:meta>
+    <dc:title>Aashish Mallick | Full-stack Engineering &amp; Systems Architecture</dc:title>
+    <dc:subject>Full-time Forward Deployed Engineer opportunities</dc:subject>
+    <meta:initial-creator>Aashish Mallick</meta:initial-creator>
+  </office:meta>
+  <office:font-face-decls>
+    <style:font-face style:name="ResumeSans" svg:font-family="Liberation Sans" />
+  </office:font-face-decls>
+  <office:styles>
+    <style:style style:name="ResumeLink" style:family="text">
+      <style:text-properties fo:color="#172c40" style:text-underline-style="solid" style:text-underline-width="auto" />
+    </style:style>
+    <style:style style:name="Body" style:family="paragraph">
+      <style:text-properties fo:font-size="10pt" style:font-name="ResumeSans" fo:color="#202735" />
+      <style:paragraph-properties fo:line-height="118%" fo:margin-bottom="0.04in" fo:margin-top="0in" />
+    </style:style>
+    <style:style style:name="Name" style:family="paragraph">
+      <style:text-properties fo:font-size="24pt" style:font-name="ResumeSans" fo:color="#202735" fo:font-weight="bold" />
+      <style:paragraph-properties fo:line-height="118%" fo:margin-bottom="0.05in" fo:margin-top="0in" fo:keep-with-next="always" />
+    </style:style>
+    <style:style style:name="Tagline" style:family="paragraph">
+      <style:text-properties fo:font-size="11pt" style:font-name="ResumeSans" fo:color="#172c40" fo:font-weight="bold" />
+      <style:paragraph-properties fo:line-height="118%" fo:margin-bottom="0.07in" fo:margin-top="0in" fo:keep-with-next="always" />
+    </style:style>
+    <style:style style:name="Contact" style:family="paragraph">
+      <style:text-properties fo:font-size="9pt" style:font-name="ResumeSans" fo:color="#344456" />
+      <style:paragraph-properties fo:line-height="118%" fo:margin-bottom="0.12in" fo:margin-top="0in" />
+    </style:style>
+    <style:style style:name="Summary" style:family="paragraph">
+      <style:text-properties fo:font-size="10pt" style:font-name="ResumeSans" fo:color="#202735" />
+      <style:paragraph-properties fo:line-height="118%" fo:margin-bottom="0.10in" fo:margin-top="0in" />
+    </style:style>
+    <style:style style:name="Section" style:family="paragraph">
+      <style:text-properties fo:font-size="10pt" style:font-name="ResumeSans" fo:color="#172c40" fo:font-weight="bold" />
+      <style:paragraph-properties fo:line-height="118%" fo:margin-bottom="0.07in" fo:margin-top="0.12in" fo:keep-with-next="always" fo:border-bottom="0.5pt solid #6b7b8b" fo:padding-bottom="0.035in" />
+    </style:style>
+    <style:style style:name="SectionNewPage" style:family="paragraph">
+      <style:text-properties fo:font-size="10pt" style:font-name="ResumeSans" fo:color="#172c40" fo:font-weight="bold" />
+      <style:paragraph-properties fo:line-height="118%" fo:margin-bottom="0.07in" fo:margin-top="0in" fo:keep-with-next="always" fo:border-bottom="0.5pt solid #6b7b8b" fo:padding-bottom="0.035in" fo:break-before="page" />
+    </style:style>
+    <style:style style:name="Job" style:family="paragraph">
+      <style:text-properties fo:font-size="10.5pt" style:font-name="ResumeSans" fo:color="#202735" fo:font-weight="bold" />
+      <style:paragraph-properties fo:line-height="118%" fo:margin-bottom="0.02in" fo:margin-top="0.07in" fo:keep-with-next="always" />
+    </style:style>
+    <style:style style:name="Meta" style:family="paragraph">
+      <style:text-properties fo:font-size="9pt" style:font-name="ResumeSans" fo:color="#4a5764" />
+      <style:paragraph-properties fo:line-height="118%" fo:margin-bottom="0.07in" fo:margin-top="0in" fo:keep-with-next="always" />
+    </style:style>
+    <style:style style:name="Stack" style:family="paragraph">
+      <style:text-properties fo:font-size="9pt" style:font-name="ResumeSans" fo:color="#4a5764" />
+      <style:paragraph-properties fo:line-height="118%" fo:margin-bottom="0.07in" fo:margin-top="0.02in" />
+    </style:style>
+    <style:style style:name="Footer" style:family="paragraph">
+      <style:text-properties fo:font-size="8pt" style:font-name="ResumeSans" fo:color="#687583" />
+      <style:paragraph-properties fo:line-height="118%" fo:margin-bottom="0.04in" fo:margin-top="0.08in" fo:text-align="end" />
+    </style:style>
+    <style:style style:name="Bullet" style:family="paragraph">
+      <style:text-properties fo:font-size="10pt" style:font-name="ResumeSans" fo:color="#202735" />
+      <style:paragraph-properties fo:line-height="118%" fo:margin-bottom="0.045in" fo:margin-top="0in" fo:keep-together="always" />
+    </style:style>
+    <text:list-style style:name="Bullets">
+      <text:list-level-style-bullet text:level="1" text:bullet-char="•">
+        <style:list-level-properties text:space-before="0in" text:min-label-width="0.13in" />
+      </text:list-level-style-bullet>
+    </text:list-style>
+  </office:styles>
+  <office:automatic-styles>
+    <style:page-layout style:name="Page">
+      <style:page-layout-properties fo:page-width="8.5in" fo:page-height="11in" fo:margin-top="0.48in" fo:margin-bottom="0.45in" fo:margin-left="0.58in" fo:margin-right="0.58in" style:print-orientation="portrait" />
+    </style:page-layout>
+  </office:automatic-styles>
+  <office:master-styles>
+    <style:master-page style:name="Standard" style:page-layout-name="Page">
+      <style:footer>
+        <text:p text:style-name="Footer">Aashish Mallick  |  <text:page-number text:select-page="current">1</text:page-number>
+        </text:p>
+      </style:footer>
+    </style:master-page>
+  </office:master-styles>
+  <office:body>
+    <office:text>
+      <text:p text:style-name="Name">AASHISH MALLICK</text:p>
+      <text:p text:style-name="Tagline">Full-stack Engineer | Systems &amp; Solution Architecture</text:p>
+      <text:p text:style-name="Contact">
+        <text:a xlink:href="mailto:aashishmallick360@gmail.com" xlink:type="simple" text:style-name="ResumeLink" text:visited-style-name="ResumeLink">aashishmallick360@gmail.com</text:a>  |  <text:a xlink:href="tel:+917500933234" xlink:type="simple" text:style-name="ResumeLink" text:visited-style-name="ResumeLink">+91 75009 33234</text:a>  |  <text:a xlink:href="https://www.linkedin.com/in/aashish360/" xlink:type="simple" text:style-name="ResumeLink" text:visited-style-name="ResumeLink">LinkedIn</text:a>  |  <text:a xlink:href="https://aashishmallick.com" xlink:type="simple" text:style-name="ResumeLink" text:visited-style-name="ResumeLink">Portfolio</text:a>  |  <text:a xlink:href="https://github.com/mallick360/" xlink:type="simple" text:style-name="ResumeLink" text:visited-style-name="ResumeLink">GitHub</text:a>
+      </text:p>
+      <text:p text:style-name="Summary">Full-stack engineer with 7+ years of experience translating complex business requirements into production software across enterprise AI, analytics, SaaS, and real-time applications. Hands-on across interfaces, backend services, integrations, data, and AWS/GCP infrastructure. Experienced in solution architecture, security, observability, and leading a six-engineer team. Seeking full-time Forward Deployed Engineer roles with end-to-end technical ownership.</text:p>
+      <text:p text:style-name="Section">PROFESSIONAL EXPERIENCE</text:p>
+      <text:p text:style-name="Job">enGen Global | SDE-III</text:p>
+      <text:p text:style-name="Meta">Sep 2025 – Present | Hyderabad</text:p>
+      <text:list text:style-name="Bullets">
+        <text:list-item>
+          <text:p text:style-name="Bullet">Architected and implemented enterprise RAG solutions for U.S. healthcare, enabling individual and team AI assistants with secure retrieval, fine-grained access controls, guardrails, and prompt governance.</text:p>
+        </text:list-item>
+        <text:list-item>
+          <text:p text:style-name="Bullet">Built a coaching platform using Gemini Live Audio for real-time voice simulations and personalized feedback for customer service representatives.</text:p>
+        </text:list-item>
+        <text:list-item>
+          <text:p text:style-name="Bullet">Designed LLM evaluation and observability pipelines to monitor response quality, hallucinations, drift, latency, and reliability in production AI applications.</text:p>
+        </text:list-item>
+        <text:list-item>
+          <text:p text:style-name="Bullet">Worked with engineering, security, and business stakeholders to translate sensitive-data and governance requirements into retrieval policies and application controls.</text:p>
+        </text:list-item>
+        <text:list-item>
+          <text:p text:style-name="Bullet">Established reusable AI-agent capabilities, evaluation frameworks, and deployment standards; prototyped Azure AI Services integration with the Gemini ecosystem.</text:p>
+        </text:list-item>
+      </text:list>
+      <text:p text:style-name="Stack">Stack: Python, FastAPI, Flask, React, TypeScript, Docker, GCP, Vertex AI, Gemini, Kafka, BigQuery, Cloud SQL, Firestore</text:p>
+      <text:p text:style-name="Job">Only Much Louder | SDE-III; previously SDE-II</text:p>
+      <text:p text:style-name="Meta">SDE-III: Apr 2024 – Sep 2025 | SDE-II: Mar 2023 – Mar 2024 | Bangalore</text:p>
+      <text:list text:style-name="Bullets">
+        <text:list-item>
+          <text:p text:style-name="Bullet">Led development of a creator analytics microservice using Django, Go, PostgreSQL, and React for Hyp.io, serving 100+ customers with insights across 280M+ creator profiles.</text:p>
+        </text:list-item>
+        <text:list-item>
+          <text:p text:style-name="Bullet">Delivered contract management, credits-based billing, transaction history APIs, and client- and sales-facing interfaces, supporting 1,000+ simultaneous activities.</text:p>
+        </text:list-item>
+        <text:list-item>
+          <text:p text:style-name="Bullet">Integrated Meta Graph API with OAuth 2.0, achieving sub-second retrieval for analytics covering 200K+ creators; implemented attribute-based view/edit permissions.</text:p>
+        </text:list-item>
+        <text:list-item>
+          <text:p text:style-name="Bullet">Led GDPR compliance through encryption, access controls, and privacy-first AWS workflows; secured 1,000+ user records and passed audits with zero violations.</text:p>
+        </text:list-item>
+        <text:list-item>
+          <text:p text:style-name="Bullet">Built 20+ React/MUI business flows, a reusable 50+ component design system, and an SEO-focused Next.js/Strapi application.</text:p>
+        </text:list-item>
+        <text:list-item>
+          <text:p text:style-name="Bullet">Led and mentored six engineers, improving sprint velocity by 30%; architected AWS applications with 99.99% uptime and sub-200ms response times.</text:p>
+        </text:list-item>
+      </text:list>
+      <text:p text:style-name="Stack">Stack: React, Next.js, TypeScript, MUI, Django, Go, PostgreSQL, MongoDB, Docker, AWS</text:p>
+      <text:p text:style-name="SectionNewPage">PROFESSIONAL EXPERIENCE — CONTINUED</text:p>
+      <text:p text:style-name="Job">Byju’s — The Learning App | SDE-II</text:p>
+      <text:p text:style-name="Meta">Mar 2022 – Mar 2023 | Bangalore</text:p>
+      <text:list text:style-name="Bullets">
+        <text:list-item>
+          <text:p text:style-name="Bullet">Built automated student-performance PDF reporting with Handlebars.js and Puppeteer for 10K student analytics, and timestamped video feedback interfaces for 10K users.</text:p>
+        </text:list-item>
+        <text:list-item>
+          <text:p text:style-name="Bullet">Delivered tutor task-management and scheduling interfaces, plus CMS workflows for batch management, test scheduling, and monthly assessments.</text:p>
+        </text:list-item>
+      </text:list>
+      <text:p text:style-name="Stack">Stack: React, Next.js, Redux, TypeScript, MUI, Puppeteer, Handlebars.js</text:p>
+      <text:p text:style-name="Job">10times Internet Pvt. Ltd. | SDE-I</text:p>
+      <text:p text:style-name="Meta">Jan 2019 – Mar 2022 | Noida</text:p>
+      <text:list text:style-name="Bullets">
+        <text:list-item>
+          <text:p text:style-name="Bullet">Built a real-time communication platform with video conferencing and instant messaging for 1,000+ daily active users.</text:p>
+        </text:list-item>
+        <text:list-item>
+          <text:p text:style-name="Bullet">Delivered SaaS capabilities spanning CRM, CMS, and 10+ third-party integrations, supporting interest- and location-based lead generation.</text:p>
+        </text:list-item>
+        <text:list-item>
+          <text:p text:style-name="Bullet">Integrated Stripe and maintained Razorpay payment workflows; built a reusable email templating engine and Firebase-based real-time chat.</text:p>
+        </text:list-item>
+      </text:list>
+      <text:p text:style-name="Stack">Stack: React, Redux, JavaScript, PHP, Symfony, CodeIgniter, MySQL, Firebase</text:p>
+      <text:p text:style-name="Job">Freelance Development | Early experience</text:p>
+      <text:p text:style-name="Meta">Jun 2017 – Jan 2019 | Ghaziabad</text:p>
+      <text:p text:style-name="Body">Built AR interactions with Unity/Vuforia and browser-based 3D visualizations using WebGL.</text:p>
+      <text:p text:style-name="Section">TECHNICAL SKILLS</text:p>
+      <text:p text:style-name="Body">Languages: Python, TypeScript, JavaScript, Go, SQL, HTML/CSS</text:p>
+      <text:p text:style-name="Body">Product &amp; services: React, Next.js, Redux, MUI, Django, FastAPI, Flask, Node.js, REST APIs, OAuth 2.0, ABAC</text:p>
+      <text:p text:style-name="Body">AI &amp; data: Gemini, Vertex AI, RAG, AI agents, LLM evaluation, PostgreSQL, MongoDB, BigQuery, Cloud SQL, Firestore, Kafka</text:p>
+      <text:p text:style-name="Body">Cloud &amp; operations: GCP, AWS (EC2, ECS, RDS, Lambda, API Gateway, SQS, CloudWatch, CloudFormation), Docker, Git</text:p>
+      <text:p text:style-name="Section">EDUCATION</text:p>
+      <text:p text:style-name="Job">B.Tech, Computer Science &amp; Engineering | 2015 – 2019</text:p>
+      <text:p text:style-name="Body">Krishna Institute of Engineering &amp; Technology | AKTU | 75.6%</text:p>
+      <text:p text:style-name="Section">CERTIFICATION</text:p>
+      <text:p text:style-name="Job">Google Cloud — Generative AI Leader | May 2026 – May 2029</text:p>
+      <text:p text:style-name="Body">
+        <text:a xlink:href="http://credly.com/earner/earned/badge/43828e36-f8aa-4a7a-8369-5593d579adf7" xlink:type="simple" text:style-name="ResumeLink" text:visited-style-name="ResumeLink">View credential on Credly</text:a>
+      </text:p>
+      <text:p text:style-name="Section">SELECTED EARLY PROJECTS</text:p>
+      <text:p text:style-name="Body">School of Innovation India from Facebook at SV.CO: interactive VR experience using Unity and Meta Quest. Document Tracker: embeddable document-tracking library. Echoes and Shadows: standalone Unity RPG.</text:p>
+    </office:text>
+  </office:body>
+</office:document>

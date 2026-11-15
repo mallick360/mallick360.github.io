@@ -6,7 +6,7 @@ import { FaGithub as Github, FaLinkedin as Linkedin } from 'react-icons/fa6'
 import { emailjsConfig, socialLinks } from '@/constants/content'
 import { SectionHeading } from '@/components/SectionHeading'
 import { Button } from '@/components/Button'
-import { fadeUp, slideInLeft, slideInRight } from '@/animations/variants'
+import { fadeUp } from '@/animations/variants'
 
 const iconMap = { github: Github, linkedin: Linkedin }
 
@@ -38,26 +38,26 @@ export function Contact() {
     <section id="contact" className="px-6 py-24">
       <div className="mx-auto max-w-6xl">
         <SectionHeading
-          eyebrow="Contact"
-          title="Let's build something"
-          description="I read every message. Send your name and email and I'll get back to you."
+          eyebrow="05 / The next chapter"
+          title="Let’s talk about your engineering team."
+          description="Considering me for a full-time Forward Deployed Engineer role? Share the role, the team, and the problems you’re working on."
         />
 
         <div className="grid gap-10 lg:grid-cols-2">
           <motion.div
-            variants={slideInLeft}
+            variants={fadeUp}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: '-10% 0px' }}
-            className="glass flex flex-col justify-between rounded-2xl p-8"
+            className="flex flex-col justify-between rounded-xl border border-border bg-surface p-6 sm:p-8"
           >
             <div>
-              <h3 className="font-display text-xl font-semibold text-text">Find me elsewhere</h3>
+              <h3 className="font-display text-xl font-semibold text-text">Looking for an engineer who owns the whole problem?</h3>
               <p className="mt-2 text-sm text-text-muted">
-                Prefer social? Reach out on LinkedIn or check out my work on GitHub.
+                Currently building AI platforms at enGen Global. For full-time engineering opportunities, connect with me on LinkedIn or send a message here.
               </p>
             </div>
-            <div className="mt-8 flex gap-4">
+            <div className="mt-8 flex flex-wrap gap-3">
               {socialLinks.map((link) => {
                 const Icon = iconMap[link.icon]
                 return (
@@ -78,46 +78,52 @@ export function Contact() {
           <motion.form
             ref={formRef}
             onSubmit={handleSubmit}
-            variants={slideInRight}
+            variants={fadeUp}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: '-10% 0px' }}
-            className="glass space-y-4 rounded-2xl p-8"
+            className="work-panel space-y-4 rounded-xl p-6 sm:p-8"
           >
             <div className="grid gap-4 sm:grid-cols-2">
               <input
                 type="text"
                 name="user_name"
                 required
-                placeholder="First Name"
-                className="rounded-xl border border-border bg-surface px-4 py-3 text-sm text-text placeholder:text-text-faint focus:border-accent focus:outline-none"
+                aria-label="Your name"
+                autoComplete="name"
+                placeholder="Your name"
+                className="min-w-0 w-full rounded-md border border-border bg-surface px-4 py-3 text-sm text-text placeholder:text-text-faint focus:border-accent focus:outline-none"
               />
               <input
                 type="email"
                 name="user_email"
                 required
-                placeholder="Email Address"
-                className="rounded-xl border border-border bg-surface px-4 py-3 text-sm text-text placeholder:text-text-faint focus:border-accent focus:outline-none"
+                aria-label="Email address"
+                autoComplete="email"
+                placeholder="Email address"
+                className="min-w-0 w-full rounded-md border border-border bg-surface px-4 py-3 text-sm text-text placeholder:text-text-faint focus:border-accent focus:outline-none"
               />
             </div>
             <input
               type="text"
               name="user_subject"
               required
-              placeholder="Subject"
-              className="w-full rounded-xl border border-border bg-surface px-4 py-3 text-sm text-text placeholder:text-text-faint focus:border-accent focus:outline-none"
+              aria-label="Role or subject"
+              placeholder="Role or subject"
+              className="w-full rounded-md border border-border bg-surface px-4 py-3 text-sm text-text placeholder:text-text-faint focus:border-accent focus:outline-none"
             />
             <textarea
               name="user_message"
               required
               rows={4}
-              placeholder="Message"
-              className="w-full resize-none rounded-xl border border-border bg-surface px-4 py-3 text-sm text-text placeholder:text-text-faint focus:border-accent focus:outline-none"
+              aria-label="Message"
+              placeholder="Tell me about the role and team"
+              className="w-full resize-none rounded-md border border-border bg-surface px-4 py-3 text-sm text-text placeholder:text-text-faint focus:border-accent focus:outline-none"
             />
 
-            <motion.p variants={fadeUp} className="min-h-5 text-sm text-accent">
-              {status === 'sent' && 'Message sent successfully ✅'}
-              {status === 'error' && 'Message not sent (service error) ❌'}
+            <motion.p variants={fadeUp} role="status" aria-live="polite" className="min-h-5 text-sm text-accent">
+              {status === 'sent' && 'Thanks—your message has been sent.'}
+              {status === 'error' && 'Unable to send. Please try again or reach out on LinkedIn.'}
             </motion.p>
 
             <Button type="submit" icon={<Send size={16} />} disabled={status === 'sending'}>

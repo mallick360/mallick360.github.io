@@ -42,7 +42,7 @@ export function Projects() {
                   </span>
                   <h3 className="mt-1 font-display text-lg font-semibold text-text">{project.title}</h3>
                   <p
-                    className="mt-2 line-clamp-3 flex-1 text-sm leading-relaxed text-text-muted [&_b]:font-semibold [&_b]:text-text"
+                    className="mt-2 line-clamp-3 flex-1 text-sm leading-relaxed text-text-muted [&_b]:font-semibold [&_b]:text-emphasis"
                     dangerouslySetInnerHTML={{ __html: project.description }}
                   />
                   <div className="mt-4 flex items-center justify-between">

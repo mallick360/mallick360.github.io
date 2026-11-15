@@ -1,23 +1,10 @@
 import { Hero } from '@/sections/Hero'
-import { About } from '@/sections/About'
-import { Skills } from '@/sections/Skills'
-import { Experience } from '@/sections/Experience'
-import { Projects } from '@/sections/Projects'
+import { SelectedWork } from '@/sections/SelectedWork'
 import { Architecture } from '@/sections/Architecture'
-import { Achievements } from '@/sections/Achievements'
+import { Experience } from '@/sections/Experience'
+import { About } from '@/sections/About'
 import { Contact } from '@/sections/Contact'
 
 export function Home() {
-  return (
-    <>
-      <Hero />
-      <About />
-      <Skills />
-      <Experience />
-      <Projects />
-      <Architecture />
-      <Achievements />
-      <Contact />
-    </>
-  )
+  return <><Hero /><SelectedWork /><Architecture /><Experience /><About /><Contact /></>
 }

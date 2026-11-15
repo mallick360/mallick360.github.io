@@ -19,9 +19,9 @@ export function Button({
   ...props
 }: ButtonProps) {
   const classes = cn(
-    'inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-medium transition-colors duration-200',
+    'inline-flex items-center gap-2 rounded-lg px-6 py-3 text-sm font-medium transition-colors duration-200',
     variant === 'primary'
-      ? 'bg-accent text-black hover:bg-accent-soft'
+      ? 'bg-accent text-bg hover:bg-accent-soft'
       : 'glass text-text hover:border-accent/60 hover:text-accent-soft',
     className,
   )

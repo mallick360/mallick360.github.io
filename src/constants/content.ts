@@ -9,15 +9,9 @@ import type {
 
 export const personal = {
   name: 'Aashish Mallick',
-  roles: [
-    'Senior AI Engineer',
-    'Solution Architect',
-    'Full Stack Engineer',
-    'Cloud Engineer',
-    'Technical Leader',
-  ],
-  bio: "Senior AI Engineer | Solution Architect | Full Stack Engineer with 7+ years of software engineering experience, including leading enterprise Generative AI initiatives since Sep 2025. Experienced in architecting and delivering LLM-powered applications, AI Agents, Retrieval-Augmented Generation (RAG) platforms, and AI observability solutions on Google Cloud using Gemini, Vertex AI, and Python. Proven expertise in designing secure, scalable, and governed AI systems with Responsible AI, LLM evaluation, AI governance, and multi-model orchestration for regulated U.S. healthcare environments. Strong background in solution architecture, cloud-native systems, and full-stack engineering, with a passion for building production-ready AI platforms that deliver measurable business impact.",
-  availability: 'Currently building AI platforms @ enGen Global',
+  roles: ['Full-stack Engineer', 'Systems & Solution Architecture'],
+  bio: "I’m Aashish, a full-stack engineer with 7+ years of experience turning complex requirements into production software. I work across interfaces, backend services, integrations, AI, and cloud infrastructure—with ownership from architecture through deployment.",
+  availability: 'Seeking full-time Forward Deployed Engineer roles',
   resumeUrl: '/resume.pdf',
 }
 
@@ -216,26 +210,16 @@ export const skills: SkillCategory[] = [
 
 export const achievements: Achievement[] = [
   { value: 7, suffix: '+', label: 'Years of Engineering Experience' },
-  { value: 280, suffix: 'M+', label: 'Creators Analyzed (Hyp.io)' },
   { value: 100, suffix: '+', label: 'Enterprise Customers Served' },
-  { value: 200, suffix: 'K+', label: 'Creators — Real-Time Analytics' },
   { value: 99.99, suffix: '%', label: 'Cloud Infrastructure Uptime' },
   { value: 30, suffix: '%', label: 'Sprint Velocity Improvement' },
 ]
 
 export const architecturePillars: ArchitecturePillar[] = [
   {
-    title: 'GenAI, RAG & AI Agents',
-    description:
-      'Enterprise-grade generative AI systems — from retrieval pipelines to autonomous agents — built for regulated, high-stakes environments.',
-    items: [
-      'Retrieval-Augmented Generation (RAG)',
-      'AI Agents & orchestration',
-      'Gemini, Vertex AI & Azure AI Services',
-      'LLM evaluation & observability',
-      'AI guardrails & prompt governance',
-      'Responsible AI practices',
-    ],
+    title: 'Frontend Engineering',
+    description: 'Product interfaces and reusable design systems for complex business workflows.',
+    items: ['React & Next.js', 'TypeScript', 'Redux', 'Material UI design systems (50+ components)'],
   },
   {
     title: 'Backend & APIs',
@@ -259,14 +243,22 @@ export const architecturePillars: ArchitecturePillar[] = [
     ],
   },
   {
+    title: 'Applied AI & intelligent systems',
+    description:
+      'Enterprise-grade generative AI systems — from retrieval pipelines to autonomous agents — built for regulated, high-stakes environments.',
+    items: [
+      'Retrieval-Augmented Generation (RAG)',
+      'AI Agents & orchestration',
+      'Gemini, Vertex AI & Azure AI Services',
+      'LLM evaluation & observability',
+      'AI guardrails & prompt governance',
+      'Responsible AI practices',
+    ],
+  },
+  {
     title: 'Data & Messaging',
     description: 'Data systems and event streaming underpinning real-time features.',
     items: ['Apache Kafka', 'PostgreSQL, MongoDB, MySQL', 'Firebase & Firestore', 'AWS SQS'],
-  },
-  {
-    title: 'Frontend Engineering',
-    description: 'Design systems and interfaces used by real customers at scale.',
-    items: ['React & Next.js', 'TypeScript', 'Redux', 'Material UI design systems (50+ components)'],
   },
   {
     title: 'Observability, Security & Compliance',

@@ -1,134 +1,39 @@
-import { useEffect, useState } from 'react'
-import { AnimatePresence, motion } from 'framer-motion'
-import { Download, MoveRight } from 'lucide-react'
-import { FaGithub as Github, FaLinkedin as Linkedin } from 'react-icons/fa6'
+import { ArrowDownRight, ArrowUpRight, Download } from 'lucide-react'
 import { personal, socialLinks } from '@/constants/content'
 import { Button } from '@/components/Button'
-import { scrollToSection } from '@/utils/scroll'
-import { staggerContainer, fadeUp } from '@/animations/variants'
-
-const iconMap = { github: Github, linkedin: Linkedin }
-
-function RotatingRole() {
-  const [index, setIndex] = useState(0)
-
-  useEffect(() => {
-    const id = setInterval(() => {
-      setIndex((prev) => (prev + 1) % personal.roles.length)
-    }, 2400)
-    return () => clearInterval(id)
-  }, [])
-
-  return (
-    <div className="h-9 overflow-hidden sm:h-10">
-      <AnimatePresence mode="wait">
-        <motion.p
-          key={personal.roles[index]}
-          initial={{ y: 24, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          exit={{ y: -24, opacity: 0 }}
-          transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-          className="font-display text-2xl font-semibold text-accent sm:text-3xl"
-        >
-          {personal.roles[index]}
-        </motion.p>
-      </AnimatePresence>
-    </div>
-  )
-}
-
-const codeSnippet = `const engineer = {
-  name: "Aashish Mallick",
-  focus: "GenAI · RAG · Cloud",
-  stack: ["Python", "GCP", "React"],
-  status: "shipping"
-}`
+import { EngineeringOverview } from '@/components/EngineeringOverview'
 
 export function Hero() {
   return (
-    <section id="home" className="relative flex min-h-screen items-center pt-28 pb-20">
-      <div className="mx-auto grid w-full max-w-6xl items-center gap-16 px-6 lg:grid-cols-[1.1fr_0.9fr]">
-        <motion.div
-          variants={staggerContainer(0.12)}
-          initial="hidden"
-          animate="visible"
-        >
-          <motion.div
-            variants={fadeUp}
-            className="mb-6 inline-flex items-center gap-2 rounded-full border border-border bg-surface px-4 py-1.5"
-          >
-            <span className="relative flex h-2 w-2">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-75" />
-              <span className="relative inline-flex h-2 w-2 rounded-full bg-accent" />
-            </span>
-            <span className="text-xs font-medium text-text-muted">{personal.availability}</span>
-          </motion.div>
-
-          <motion.h1
-            variants={fadeUp}
-            className="font-display text-4xl font-bold leading-[1.1] text-text sm:text-5xl lg:text-6xl"
-          >
-            {personal.name}
-          </motion.h1>
-
-          <motion.div variants={fadeUp} className="mt-3">
-            <RotatingRole />
-          </motion.div>
-
-          <motion.p variants={fadeUp} className="mt-6 max-w-xl text-base leading-relaxed text-text-muted">
-            {personal.bio}
-          </motion.p>
-
-          <motion.div variants={fadeUp} className="mt-8 flex flex-wrap items-center gap-4">
-            <Button href={personal.resumeUrl} target="_blank" icon={<Download size={16} />}>
-              Download Resume
-            </Button>
-            <Button variant="ghost" onClick={() => scrollToSection('#contact')}>
-              Contact
-            </Button>
-            <Button
-              variant="ghost"
-              icon={<MoveRight size={16} />}
-              onClick={() => scrollToSection('#experience')}
-            >
-              View Experience
-            </Button>
-          </motion.div>
-
-          <motion.div variants={fadeUp} className="mt-8 flex items-center gap-5">
-            {socialLinks.map((link) => {
-              const Icon = iconMap[link.icon]
-              return (
-                <a
-                  key={link.url}
-                  href={link.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={link.label}
-                  className="text-text-muted transition-colors hover:text-accent"
-                >
-                  <Icon size={22} />
-                </a>
-              )
-            })}
-          </motion.div>
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0, scale: 0.94 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
-          className="glass hidden rounded-2xl p-5 font-mono text-sm shadow-2xl shadow-black/40 lg:block"
-        >
-          <div className="mb-4 flex gap-1.5">
-            <span className="h-3 w-3 rounded-full bg-[#ff5f56]" />
-            <span className="h-3 w-3 rounded-full bg-[#ffbd2e]" />
-            <span className="h-3 w-3 rounded-full bg-[#27c93f]" />
+    <section id="home" className="relative overflow-hidden px-6 pb-12 pt-32 sm:pt-44">
+      <div aria-hidden className="pointer-events-none absolute -right-64 top-[-20rem] h-[50rem] w-[50rem] rounded-full bg-accent/[0.055] blur-[100px]" />
+      <div className="section-shell relative">
+        <div className="mb-8 flex items-center gap-3">
+          <span className="h-2 w-2 rounded-full bg-accent shadow-[0_0_16px_color-mix(in_srgb,var(--color-accent)_33%,transparent)]" />
+          <p className="eyebrow text-accent">Seeking full-time Forward Deployed Engineer roles</p>
+        </div>
+        <div className="grid gap-8 lg:grid-cols-[1.45fr_0.95fr] lg:items-center lg:gap-12">
+          <div>
+            <p className="mb-5 text-sm text-text-muted">Aashish Mallick / Full-stack engineer & systems architect</p>
+            <h1 className="font-display text-[clamp(2.8rem,6vw,5.1rem)] font-medium leading-[1.07] tracking-[-0.065em]">
+              I turn complex<br />requirements into<br /><span className="text-accent">working software.</span>
+            </h1>
+            <p className="mt-7 max-w-lg text-sm leading-7 text-text-muted">From the interface to the infrastructure, I connect product engineering, system design, and applied AI to own delivery into production.</p>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <Button href="#work" icon={<ArrowDownRight size={16} />}>Explore selected work</Button>
+              <Button href={personal.resumeUrl} target="_blank" variant="ghost" icon={<Download size={15} />}>Download résumé</Button>
+            </div>
+            <div className="mt-6 flex flex-wrap gap-x-5 gap-y-3">{socialLinks.map(link => <a key={link.url} href={link.url} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-xs text-text-muted hover:text-accent">{link.label}<ArrowUpRight size={13} /></a>)}</div>
           </div>
-          <pre className="whitespace-pre-wrap text-text-muted">
-            <code>{codeSnippet}</code>
-          </pre>
-        </motion.div>
+          <EngineeringOverview />
+        </div>
+        <div className="mt-14 grid border-t border-border sm:grid-cols-3">
+          {[
+            ['01', '7+ years of engineering', 'Production software across four industries'],
+            ['02', 'Full-stack to architecture', 'Interfaces, services, integrations & cloud'],
+            ['03', 'Hands-on technical leadership', 'Led and mentored a six-engineer team'],
+          ].map(([number, title, detail]) => <div key={number} className="flex gap-4 border-b border-border py-6 sm:pr-5"><span className="pt-1 font-mono text-[10px] text-accent">{number}</span><div><p className="font-display text-sm font-semibold">{title}</p><p className="mt-1 text-xs leading-6 text-text-faint">{detail}</p></div></div>)}
+        </div>
       </div>
     </section>
   )

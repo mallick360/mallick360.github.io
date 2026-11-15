@@ -53,7 +53,7 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
             />
 
             <p
-              className="mt-4 text-sm leading-relaxed text-text-muted [&_b]:font-semibold [&_b]:text-text"
+              className="mt-4 text-sm leading-relaxed text-text-muted [&_b]:font-semibold [&_b]:text-emphasis"
               dangerouslySetInnerHTML={{ __html: project.description }}
             />
 
